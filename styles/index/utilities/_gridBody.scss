@@ -1,0 +1,40 @@
+// 3 sizes A: 0-500  B: 500-800 C:800 - Max
+
+
+body{
+    display: grid;
+    grid-template-columns: 95%;
+    grid-template-rows: 18.87rem 51.75rem 39.625rem 10rem; 
+    grid-template-areas: 
+    "header"
+    "main"
+    "section"
+    "footer";
+    justify-content: center;
+    background: #FFF4FD 100%;
+    
+    &:before{
+        content: '¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803';
+        position: absolute;
+        top: 0.0625rem;
+        right: 0.0625rem;
+        left: 0.0625rem;
+        height: 1.4rem;
+        padding-left: 0.43rem;
+        font-size: 0.6rem;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+        background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+        box-shadow: 0 1px 0 0 #110038;  
+    }
+    
+    @media screen and (min-width: 800px){
+        grid-template-columns: 80%;
+        justify-content: center; 
+        
+        &:before{
+            font-size: 0.75rem;
+        }
+    }
+}

@@ -1,4 +1,10 @@
 //Main file. Designed based on ATOMIC CSS concept.
 @import './utilities/_normalización.scss';
 @import './utilities/_variables.scss';
-@import './quarks/_texts.scss';
+@import './utilities/_gridBody.scss';
+@import './quarks/_span.scss';
+@import './quarks/_buttons.scss';
+@import './molecules/_header.scss';
+@import './molecules/_main.scss';
+@import './molecules/_1section.scss';
+@import './molecules/_footer.scss';

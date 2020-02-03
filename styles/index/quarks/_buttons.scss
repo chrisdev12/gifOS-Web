@@ -1,0 +1,71 @@
+//HEADER BUTTONS
+
+.header-btn{
+    width: 5rem;
+    height: 1.4rem;
+    margin-left:1rem;
+    background: #F7C9F3;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, 
+    inset 1px 1px 0 0 #FFFFFF;
+    text-align: center;
+    color: #110038;
+    
+    &:nth-last-child(1){
+        width: auto;
+        color: #110038;
+        letter-spacing: 0;
+        line-height: 1.2rem;
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+    
+           
+    @media screen and (min-width: 500px){
+        width: 7rem;
+        height: 1.8rem;
+    }
+
+    @media screen and (min-width: 800px){
+        width: 9rem;
+        height: 2.25rem;
+    }
+}
+
+
+    
+select{
+    padding-left: 0.5rem;
+}
+
+button , select{
+    cursor: pointer;
+    font-size: 0.7rem;
+    
+    @media screen and (min-width: 500px){
+        font-size: 1rem;
+    }
+    
+    a{
+        text-decoration: none;
+        color: #110038;
+    }
+}
+
+.nav-btn{
+    
+    width: 6.4125rem;
+    height: 2.25rem;
+    background: #E6E6E6;
+    color: #B4B4B4;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, 
+    inset 1px 1px 0 0 #FFFFFF;
+    
+    img{
+        width: 0.8rem;
+        height: 0.8rem;
+        margin-right: 0.6rem;
+    }  
+}
