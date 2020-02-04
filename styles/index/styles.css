@@ -55,10 +55,8 @@ body:before {
 }
 
 span {
-  border: none;
-  width: 20rem;
-  height: 10rem;
   background-color: coral;
+  max-height: 100%;
 }
 
 .header-btn {
@@ -197,8 +195,9 @@ header {
 }
 
 nav {
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: searchbar;
   padding-top: 1.8rem;
   position: relative;
@@ -257,5 +256,53 @@ nav input {
   nav input {
     width: 78%;
   }
+}
+
+main div {
+  width: 100%;
+  margin-bottom: 4rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 2rem 9rem 9rem;
+      grid-template-rows: 2rem 9rem 9rem;
+  grid-row-gap: 1.2rem;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 1rem;
+      grid-template-areas: "searchbar searchbar" "gift gift" "gift gift";
+}
+
+@media screen and (min-width: 500px) {
+  main div {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "searchbar searchbar searchbar" "gift gift gift";
+  }
+}
+
+@media screen and (min-width: 800px) {
+  main div {
+    -ms-grid-rows: 2rem 18rem;
+        grid-template-rows: 2rem 18rem;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: "searchbar searchbar searchbar searchbar" "gift gift gift gift";
+  }
+}
+
+main div input {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: searchbar;
+  padding-left: 0.5rem;
+  font-family: ChakraPetch-Regular;
+  font-size: 14px;
+  color: #110038;
+  letter-spacing: 0;
+  background: #FFFAFE;
+  border: 1px solid #E6BBE2;
+  -webkit-box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+          box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
 }
 /*# sourceMappingURL=styles.css.map */
