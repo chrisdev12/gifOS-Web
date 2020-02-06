@@ -54,8 +54,7 @@ body:before {
   }
 }
 
-span {
-  background-color: coral;
+.gifts {
   max-height: 100%;
 }
 
