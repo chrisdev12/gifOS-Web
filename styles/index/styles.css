@@ -295,22 +295,21 @@ nav input {
   }
 }
 
-#suggestions span {
-  background-color: coral;
+#suggestions img {
   max-height: 100%;
   width: 47%;
   height: 40%;
 }
 
 @media screen and (min-width: 600px) {
-  #suggestions span {
+  #suggestions img {
     width: 32%;
     height: 42%;
   }
 }
 
 @media screen and (min-width: 1000px) {
-  #suggestions span {
+  #suggestions img {
     width: 22%;
     height: 90%;
   }
@@ -344,29 +343,28 @@ nav input {
   }
 }
 
-#trends span {
-  background-color: coral;
+#trends img {
   max-height: 100%;
   width: 47%;
   height: 18%;
 }
 
 @media screen and (min-width: 500px) {
-  #trends span {
+  #trends img {
     width: 32%;
     height: 22%;
   }
-  #trends span:nth-last-child(2), #trends span:nth-last-child(6) {
+  #trends img:nth-last-child(2), #trends img:nth-last-child(6) {
     width: 66%;
   }
 }
 
 @media screen and (min-width: 800px) {
-  #trends span {
+  #trends img {
     width: 22%;
     height: 30%;
   }
-  #trends span:nth-last-child(2), #trends span:nth-last-child(6) {
+  #trends img:nth-last-child(2), #trends img:nth-last-child(6) {
     width: 48%;
   }
 }
