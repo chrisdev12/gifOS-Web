@@ -1,6 +1,41 @@
 //HEADER BUTTONS
 
+//Create button
+a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+button , select{
+    font-size: 0.7rem;
+    background: none;
+      
+    @media screen and (min-width: 500px){
+        font-size: 1rem;
+    }
+}
+
+.select-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    
+    select{
+        width: 98%;
+        background: inherit;
+    }
+    
+}
+
+//General style for button or links with button shape
 .header-btn{
+    position: relative;
+    cursor: pointer;
+    color: #110038;
     width: 5rem;
     height: 1.4rem;
     margin-left:1rem;
@@ -8,7 +43,6 @@
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, 
     inset 1px 1px 0 0 #FFFFFF;
-    text-align: center;
     color: #110038;
     
     &:nth-last-child(1){
@@ -19,9 +53,13 @@
         background: none;
         border: none;
         box-shadow: none;
+        justify-content: flex-start;
+        
+        button{
+            margin: 1rem;
+        }
     }
     
-           
     @media screen and (min-width: 500px){
         width: 7rem;
         height: 1.8rem;
@@ -33,28 +71,8 @@
     }
 }
 
-
-    
-select{
-    padding-left: 0.5rem;
-}
-
-button , select{
-    cursor: pointer;
-    font-size: 0.7rem;
-    
-    @media screen and (min-width: 500px){
-        font-size: 1rem;
-    }
-    
-    a{
-        text-decoration: none;
-        color: #110038;
-    }
-}
-
 .nav-btn{
-    
+    position: relative;  
     width: 6.4125rem;
     height: 2.25rem;
     background: #E6E6E6;
@@ -67,5 +85,22 @@ button , select{
         width: 0.8rem;
         height: 0.8rem;
         margin-right: 0.6rem;
-    }  
+    }
+}
+
+//Behavior when the buttons are hovered
+
+.hover-btn:hover{
+    &:before{
+        background: none;
+        border: 1px dotted black;
+        content: "";
+        display: block;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        pointer-events: none;
+    }
 }

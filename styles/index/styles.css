@@ -53,7 +53,52 @@ body:before {
   }
 }
 
+a {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+button, select {
+  font-size: 0.7rem;
+  background: none;
+}
+
+@media screen and (min-width: 500px) {
+  button, select {
+    font-size: 1rem;
+  }
+}
+
+.select-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+}
+
+.select-container select {
+  width: 98%;
+  background: inherit;
+}
+
 .header-btn {
+  position: relative;
+  cursor: pointer;
+  color: #110038;
   width: 5rem;
   height: 1.4rem;
   margin-left: 1rem;
@@ -61,7 +106,6 @@ body:before {
   border: 1px solid #110038;
   -webkit-box-shadow: inset -1px -1px 0 0 #997D97,  inset 1px 1px 0 0 #FFFFFF;
           box-shadow: inset -1px -1px 0 0 #997D97,  inset 1px 1px 0 0 #FFFFFF;
-  text-align: center;
   color: #110038;
 }
 
@@ -74,6 +118,13 @@ body:before {
   border: none;
   -webkit-box-shadow: none;
           box-shadow: none;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.header-btn:nth-last-child(1) button {
+  margin: 1rem;
 }
 
 @media screen and (min-width: 500px) {
@@ -90,27 +141,8 @@ body:before {
   }
 }
 
-select {
-  padding-left: 0.5rem;
-}
-
-button, select {
-  cursor: pointer;
-  font-size: 0.7rem;
-}
-
-@media screen and (min-width: 500px) {
-  button, select {
-    font-size: 1rem;
-  }
-}
-
-button a, select a {
-  text-decoration: none;
-  color: #110038;
-}
-
 .nav-btn {
+  position: relative;
   width: 6.4125rem;
   height: 2.25rem;
   background: #E6E6E6;
@@ -124,6 +156,19 @@ button a, select a {
   width: 0.8rem;
   height: 0.8rem;
   margin-right: 0.6rem;
+}
+
+.hover-btn:hover:before {
+  background: none;
+  border: 1px dotted black;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  pointer-events: none;
 }
 
 .general-input {
