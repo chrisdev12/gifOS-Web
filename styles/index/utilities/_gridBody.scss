@@ -1,12 +1,10 @@
 // 3 sizes A: 0-500  B: 500-800 C:800 - Max
 
-
 body{
     display: grid;
     grid-template-columns: 95%;
     justify-content: center;
-    background: #FFF4FD 100%;
-    
+
     &:before{
         content: '¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803';
         position: absolute;
@@ -19,7 +17,6 @@ body{
         display: flex;
         align-items: center;
         color: #FFFFFF;
-        background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
         box-shadow: 0 1px 0 0 #110038;  
     }
     

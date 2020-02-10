@@ -1,4 +1,136 @@
-// Variables for the document.
+//Body | font most regular colors for white and dark mode
 
-$background-wh-mode: #ffffff 100%;
-$background-dk-mode: #110038 100%;
+$white-body: #ffffff;
+$dark-body: #110038;
+$white-background: #E6E6E6;
+$dark-background:#B4B4B4;
+
+//----------------Navbars and topbars------------------
+
+$white-nav-shadow: inset -2px -2px#B4B4B4, 
+inset 2px 2px #FFFFFF;
+$white-topbar-background: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+
+@mixin white-navbar {
+    background: $white-background;
+    box-shadow: $white-nav-shadow;
+    &:before{
+        background: $white-topbar-background; 
+    }
+    .nav-btn{        
+        background: $white-background;
+        color: $dark-background;
+    } 
+}
+
+$dark-nav-shadow: inset -2px -2px 0 0 #8F8F8F,
+inset 2px 2px 0 0 #FFFFFF;
+$dark-topbar-background: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%); 
+
+@mixin dark-navbar {
+    background: $dark-background;
+    box-shadow: $dark-nav-shadow;
+    &:before{
+        background: $dark-topbar-background; 
+    }
+    .nav-btn{        
+        background: $dark-background;
+        color: #8F8F8F;
+    }  
+}
+//Principal searchbar,located inside of the nav
+
+@mixin principal-searchbar {
+    border: 1px solid #979797 100%;
+    box-shadow: inset -2px -2px#E6E6E6, 
+    inset 2px 2px #000000; ;   
+}
+
+//Section bars (Bar container and input)
+
+$white-searchbar-border: 1px solid #E6BBE2;
+$white-searchbar-shadow: inset -2px -2px 0 0 #E6DCE4,
+inset 2px 2px 0 0 #80687D;
+
+@mixin white-alternaitve-searchbar {
+    border: $white-searchbar-border;
+    box-shadow:$white-searchbar-shadow;
+}
+
+$dark-searchbar-border: 1px solid #2E32FB;
+$dark-searchbar-shadow: inset -2px -2px 0 0 #E6DCE4,
+inset 2px 2px 0 0 #110038;
+
+@mixin dark-alternative-searchbar {
+    border: $dark-searchbar-border;
+    box-shadow:$dark-searchbar-shadow;
+}
+
+//--------------main sections--------------------------//
+
+//Main gifts container
+
+@mixin dark-gifts-container{
+    background: $dark-background;
+    box-shadow: inset -2px -2px 0 0 #5C5C5C,
+    inset 2px 2px 0 0 #FFFFFF;
+}
+
+@mixin white-gifts-container{
+    background: $white-background;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4,
+    inset 2px 2px 0 0 #FFFFFF;
+}
+
+@mixin main-white-buttons {
+    background: #4180F6;
+    border: 1px solid #4C2F99;
+    box-shadow: inset -2px -2px 0 0 #284F99,
+    inset 2px 2px 0 0 #FFFFFF;
+}
+ 
+@mixin main-dark-buttons {
+    background: #2E32FB;
+    border: 1px solid #4C2F99;
+    box-shadow: inset -2px -2px 0 0 #2124B3,
+    inset 2px 2px 0 0 #FFFFFF;
+    color: whitesmoke;
+}
+
+//----------------Button colors-------------------
+
+$white-button-background: #F7C9F3;
+$white-button-shadow: inset -1px -1px 0 0 #997D97, 
+inset 1px 1px 0 0 #FFFFFF;
+
+@mixin header-white-buttons {
+    background: $white-button-background;
+    box-shadow: $white-button-shadow;
+    button,select{
+        color: $dark-body;
+    }
+}
+
+$dark-button-background: #EE3EFE;
+$dark-button-shadow: inset -1px -1px 0 0 #A72CB3
+, inset 1px 1px 0 0 #FFFFFF;
+
+@mixin header-dark-buttons {
+    background: $dark-button-background;
+    box-shadow: $dark-button-shadow;
+    button,select{
+        color: $white-body;
+    }
+}
+ 
+//Hover Behavior
+
+ @mixin hover-animation {  
+    background: none;
+    border: 1px dotted black;
+    content: "";
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    z-index: 10;
+}

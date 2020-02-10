@@ -7,28 +7,28 @@
     <meta name="description" content="Gif web app: Discover and visualize gifs. Capture and create your own gifs">
     <meta name="keywords" content="Gif Catalog , Upload Gif">
     <meta name="author" content="ChrisDev12">
-    <link rel="stylesheet" href="./styles/index/styles.css">
+    <link rel="stylesheet" href="./styles/index/whitemode.css">
     <title>GifOs Web</title>
 </head>
 
-<body class="white">
+<body>
     <header>
         <div class="create-and-themes">
             <a href="#"><img src="./images/gifOF_logo.png" alt="Main logo"></a>
             <div>
-                <a href="./upload.html" class="header-btn hover-btn">
+                <a href="./upload.html" class="header-btn hover-border">
                     <button id="upload">
                         Crear Guifos
                     </button>
                 </a>
-                <span class="select-container header-btn hover-btn">
+                <span class="select-container header-btn hover-border">
                     <select id="selectTheme">
                         <option value="">Elegir tema</option>
                         <option value="white">Modo claro</option>
                         <option value="dark">Modo oscuro</option>
                     </select>
                 </span>
-                <a href="./misguifos.html" class="header-btn hover-btn">
+                <a href="./misguifos.html" class="header-btn hover-border">
                     <button>
                         <u>M</u>is Guifos
                     </button>
@@ -37,18 +37,46 @@
         </div>
         <nav>
             <input id="searchbar" type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
-            <button class="nav-btn hover-btn"> <img src="./images/lupa_inactive.svg" alt=""> Buscar</button>
+            <button class="nav-btn hover-border"> <img src="./images/lupa_inactive.svg" alt=""> Buscar</button>
         </nav>
     </header>
     <main id="suggestions">
-        <input class="general-input" type="text" placeholder="Hoy te sugerimos:">
-        <img class="suggest-gifts" src="" alt="">
-        <img class="suggest-gifts" src="" alt="">
-        <img class="suggest-gifts" src="" alt="">
-        <img class="suggest-gifts" src="" alt="">
+        <input class="alternative-searchbar" type="text" placeholder="Hoy te sugerimos:">
+        <span class="suggestion-container hover-border">
+            <div>
+                <p></p>
+                <img src="./images/button3.svg" alt="Button with shape of X">
+                <button>Ver más...</button>
+            </div>
+            <img class="suggest-gifts" src="" alt="">
+        </span>
+        <span class="suggestion-container hover-border">
+            <div>
+                <p></p>
+                <img src="./images/button3.svg" alt="Button with shape of X">
+                <button>Ver más...</button>
+            </div>
+            <img class="suggest-gifts" src="" alt="">
+        </span>
+        <span class="suggestion-container hover-border">
+            <div>
+                <p></p>
+                <img src="./images/button3.svg" alt="Button with shape of X">
+                <button>Ver más...</button>
+            </div>
+            <img class="suggest-gifts" src="" alt="">
+        </span>
+        <span class="suggestion-container hover-border">
+            <div>
+                <p></p>
+                <img src="./images/button3.svg" alt="Button with shape of X">
+                <button>Ver más...</button>
+            </div>
+            <img class="suggest-gifts" src="" alt="">
+        </span>
     </main>
     <section id="trends">
-        <input class="general-input" type="text" placeholder="Tendencias:">
+        <input class="alternative-searchbar" type="text" placeholder="Tendencias:">
         <img class="trend-gifts" src="" alt="">
         <img class="trend-gifts" src="" alt="">
         <img class="trend-gifts" src="" alt="">

@@ -15,7 +15,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: #FFF4FD 100%;
 }
 
 body:before {
@@ -34,8 +33,6 @@ body:before {
       -ms-flex-align: center;
           align-items: center;
   color: #FFFFFF;
-  background-image: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
-  background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
   -webkit-box-shadow: 0 1px 0 0 #110038;
           box-shadow: 0 1px 0 0 #110038;
 }
@@ -69,6 +66,7 @@ a {
 button, select {
   font-size: 0.7rem;
   background: none;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 500px) {
@@ -97,21 +95,14 @@ button, select {
 
 .header-btn {
   position: relative;
-  cursor: pointer;
-  color: #110038;
   width: 5rem;
   height: 1.4rem;
   margin-left: 1rem;
-  background: #F7C9F3;
   border: 1px solid #110038;
-  -webkit-box-shadow: inset -1px -1px 0 0 #997D97,  inset 1px 1px 0 0 #FFFFFF;
-          box-shadow: inset -1px -1px 0 0 #997D97,  inset 1px 1px 0 0 #FFFFFF;
-  color: #110038;
 }
 
 .header-btn:nth-last-child(1) {
   width: auto;
-  color: #110038;
   letter-spacing: 0;
   line-height: 1.2rem;
   background: none;
@@ -121,10 +112,6 @@ button, select {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-}
-
-.header-btn:nth-last-child(1) button {
-  margin: 1rem;
 }
 
 @media screen and (min-width: 500px) {
@@ -145,33 +132,33 @@ button, select {
   position: relative;
   width: 6.4125rem;
   height: 2.25rem;
-  background: #E6E6E6;
-  color: #B4B4B4;
   border: 1px solid #808080;
-  -webkit-box-shadow: inset -1px -1px 0 0 #B4B4B4,  inset 1px 1px 0 0 #FFFFFF;
-          box-shadow: inset -1px -1px 0 0 #B4B4B4,  inset 1px 1px 0 0 #FFFFFF;
+  -webkit-box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
 }
 
 .nav-btn img {
+  position: relative;
   width: 0.8rem;
   height: 0.8rem;
   margin-right: 0.6rem;
 }
 
-.hover-btn:hover:before {
+.hover-border:hover:before {
   background: none;
   border: 1px dotted black;
   content: "";
   display: block;
   position: absolute;
+  pointer-events: none;
+  z-index: 10;
   top: 2px;
   left: 2px;
   right: 2px;
   bottom: 2px;
-  pointer-events: none;
 }
 
-.general-input {
+.alternative-searchbar {
   width: 100%;
   height: 2rem;
   margin-bottom: 1rem;
@@ -181,9 +168,6 @@ button, select {
   color: #110038;
   letter-spacing: 0;
   background: #FFFAFE;
-  border: 1px solid #E6BBE2;
-  -webkit-box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
-          box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
 }
 
 header {
@@ -255,7 +239,6 @@ nav {
   grid-area: searchbar;
   padding-top: 1.8rem;
   position: relative;
-  background: #E6E6E6 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -267,8 +250,6 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-shadow: inset -2px -2px #B4B4B4, inset 2px 2px #FFFFFF;
-          box-shadow: inset -2px -2px #B4B4B4, inset 2px 2px #FFFFFF;
 }
 
 nav:before {
@@ -278,8 +259,6 @@ nav:before {
   left: 0.1875rem;
   height: 1.5rem;
   font-size: 0.9rem;
-  background-image: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
-  background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
   color: whitesmoke;
   padding-left: 0.375rem;
   display: -webkit-box;
@@ -340,24 +319,79 @@ nav input {
   }
 }
 
-#suggestions img {
+#suggestions .suggestion-container {
+  padding: 0.19rem 0.25rem 0.25rem 0.25rem;
   max-height: 100%;
   width: 47%;
   height: 40%;
-}
-
-@media screen and (min-width: 600px) {
-  #suggestions img {
-    width: 32%;
-    height: 42%;
-  }
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 @media screen and (min-width: 1000px) {
-  #suggestions img {
+  #suggestions .suggestion-container {
     width: 22%;
     height: 90%;
   }
+}
+
+#suggestions .suggestion-container div {
+  height: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#suggestions .suggestion-container div img {
+  width: 1rem;
+  height: 0.9rem;
+}
+
+#suggestions .suggestion-container img {
+  position: relative;
+  width: 100%;
+  height: 90%;
+}
+
+#suggestions .suggestion-container button {
+  position: absolute;
+  bottom: 0.94rem;
+  left: 0.8rem;
+  width: 3.5rem;
+  height: 1.5rem;
+  font-size: 0.7rem;
+  z-index: 20;
+}
+
+@media screen and (min-width: 500px) {
+  #suggestions .suggestion-container button {
+    width: 5rem;
+    height: 2.1rem;
+    font-size: 0.9rem;
+  }
+}
+
+#suggestions .hover-border:hover:before {
+  top: 12%;
+  left: 0.33rem;
+  right: 0.33rem;
+  bottom: 0.33rem;
+  border-width: 2px;
 }
 
 #trends {
@@ -413,4 +447,65 @@ nav input {
     width: 48%;
   }
 }
-/*# sourceMappingURL=styles.css.map */
+
+body {
+  background: #110038;
+  color: #ffffff;
+}
+
+body:before {
+  background: -webkit-gradient(linear, right top, left top, from(#EE3EFE), to(#2E32FB));
+  background: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+}
+
+body .header-btn {
+  background: #EE3EFE;
+  -webkit-box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+}
+
+body .header-btn button, body .header-btn select {
+  color: #ffffff;
+}
+
+body nav {
+  background: #B4B4B4;
+  -webkit-box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+}
+
+body nav:before {
+  background: -webkit-gradient(linear, right top, left top, from(#EE3EFE), to(#2E32FB));
+  background: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+}
+
+body nav .nav-btn {
+  background: #B4B4B4;
+  color: #8F8F8F;
+}
+
+body .alternative-searchbar {
+  border: 1px solid #2E32FB;
+  -webkit-box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #110038;
+          box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #110038;
+}
+
+body .suggestion-container {
+  background: #B4B4B4;
+  -webkit-box-shadow: inset -2px -2px 0 0 #5C5C5C, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #5C5C5C, inset 2px 2px 0 0 #FFFFFF;
+}
+
+body .suggestion-container div {
+  background: -webkit-gradient(linear, right top, left top, from(#EE3EFE), to(#2E32FB));
+  background: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+}
+
+body .suggestion-container button {
+  background: #2E32FB;
+  border: 1px solid #4C2F99;
+  -webkit-box-shadow: inset -2px -2px 0 0 #2124B3, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #2124B3, inset 2px 2px 0 0 #FFFFFF;
+  color: whitesmoke;
+}
+/*# sourceMappingURL=darkmode.css.map */

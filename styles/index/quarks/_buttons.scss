@@ -5,13 +5,13 @@ a{
     text-decoration: none;
     display: flex;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: center; 
 }
 
 button , select{
     font-size: 0.7rem;
     background: none;
+    cursor: pointer;
       
     @media screen and (min-width: 500px){
         font-size: 1rem;
@@ -34,30 +34,19 @@ button , select{
 //General style for button or links with button shape
 .header-btn{
     position: relative;
-    cursor: pointer;
-    color: #110038;
     width: 5rem;
     height: 1.4rem;
-    margin-left:1rem;
-    background: #F7C9F3;
+    margin-left: 1rem;
     border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, 
-    inset 1px 1px 0 0 #FFFFFF;
-    color: #110038;
     
     &:nth-last-child(1){
         width: auto;
-        color: #110038;
         letter-spacing: 0;
         line-height: 1.2rem;
         background: none;
         border: none;
         box-shadow: none;
         justify-content: flex-start;
-        
-        button{
-            margin: 1rem;
-        }
     }
     
     @media screen and (min-width: 500px){
@@ -75,32 +64,26 @@ button , select{
     position: relative;  
     width: 6.4125rem;
     height: 2.25rem;
-    background: #E6E6E6;
-    color: #B4B4B4;
     border: 1px solid #808080;
-    box-shadow: inset -1px -1px 0 0 #B4B4B4, 
+    box-shadow: inset -1px -1px 0 0 #B4B4B4,
     inset 1px 1px 0 0 #FFFFFF;
     
     img{
+        position: relative;
         width: 0.8rem;
         height: 0.8rem;
         margin-right: 0.6rem;
     }
 }
 
-//Behavior when the buttons are hovered
+//Behavior when a particular element be hovered
 
-.hover-btn:hover{
+.hover-border:hover{
     &:before{
-        background: none;
-        border: 1px dotted black;
-        content: "";
-        display: block;
-        position: absolute;
+        @include hover-animation;
         top: 2px;
         left: 2px;
         right: 2px;
         bottom: 2px;
-        pointer-events: none;
     }
 }

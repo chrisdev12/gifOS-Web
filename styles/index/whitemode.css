@@ -1,0 +1,510 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 95%;
+      grid-template-columns: 95%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body:before {
+  content: '¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803';
+  position: absolute;
+  top: 0.0625rem;
+  right: 0.0625rem;
+  left: 0.0625rem;
+  height: 1.4rem;
+  padding-left: 0.43rem;
+  font-size: 0.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #FFFFFF;
+  -webkit-box-shadow: 0 1px 0 0 #110038;
+          box-shadow: 0 1px 0 0 #110038;
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    -ms-grid-columns: 85%;
+        grid-template-columns: 85%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body:before {
+    font-size: 0.75rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+button, select {
+  font-size: 0.7rem;
+  background: none;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 500px) {
+  button, select {
+    font-size: 1rem;
+  }
+}
+
+.select-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+}
+
+.select-container select {
+  width: 98%;
+  background: inherit;
+}
+
+.header-btn {
+  position: relative;
+  width: 5rem;
+  height: 1.4rem;
+  margin-left: 1rem;
+  border: 1px solid #110038;
+}
+
+.header-btn:nth-last-child(1) {
+  width: auto;
+  letter-spacing: 0;
+  line-height: 1.2rem;
+  background: none;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+@media screen and (min-width: 500px) {
+  .header-btn {
+    width: 7rem;
+    height: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .header-btn {
+    width: 9rem;
+    height: 2.25rem;
+  }
+}
+
+.nav-btn {
+  position: relative;
+  width: 6.4125rem;
+  height: 2.25rem;
+  border: 1px solid #808080;
+  -webkit-box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.nav-btn img {
+  position: relative;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-right: 0.6rem;
+}
+
+.hover-border:hover:before {
+  background: none;
+  border: 1px dotted black;
+  content: "";
+  display: block;
+  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+}
+
+.alternative-searchbar {
+  width: 100%;
+  height: 2rem;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  font-family: ChakraPetch-Regular;
+  font-size: 14px;
+  color: #110038;
+  letter-spacing: 0;
+  background: #FFFAFE;
+}
+
+header {
+  margin-top: 3.6875rem;
+  margin-bottom: 4rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  -ms-grid-rows: 4rem 6.1875rem;
+      grid-template-rows: 4rem 6.1875rem;
+      grid-template-areas: "header-buttons" "searchbar";
+  grid-row-gap: 1.1rem;
+}
+
+.create-and-themes {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header-buttons;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.create-and-themes img {
+  height: 85%;
+  width: 5.42rem;
+  margin-right: 1rem;
+}
+
+@media screen and (min-width: 500px) {
+  .create-and-themes img {
+    height: 90%;
+    width: 6.42rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .create-and-themes img {
+    height: 100%;
+    width: 6.42rem;
+  }
+}
+
+.create-and-themes div {
+  width: 80%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+}
+
+nav {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: searchbar;
+  padding-top: 1.8rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav:before {
+  position: absolute;
+  top: 0.1875rem;
+  right: 0.1875rem;
+  left: 0.1875rem;
+  height: 1.5rem;
+  font-size: 0.9rem;
+  color: whitesmoke;
+  padding-left: 0.375rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  content: 'Buscar';
+}
+
+nav input {
+  width: 62%;
+  height: 3rem;
+  padding-left: 1rem;
+  border: 1px solid #979797 100%;
+  -webkit-box-shadow: inset -2px -2px #E6E6E6, inset 2px 2px #000000;
+          box-shadow: inset -2px -2px #E6E6E6, inset 2px 2px #000000;
+}
+
+@media screen and (min-width: 500px) {
+  nav input {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  nav input {
+    width: 78%;
+  }
+}
+
+#suggestions {
+  height: 32rem;
+  width: 100%;
+  margin-bottom: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+
+@media screen and (min-width: 600px) {
+  #suggestions {
+    height: 30rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #suggestions {
+    height: 20rem;
+  }
+}
+
+#suggestions .suggestion-container {
+  padding: 0.19rem 0.25rem 0.25rem 0.25rem;
+  max-height: 100%;
+  width: 47%;
+  height: 40%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (min-width: 1000px) {
+  #suggestions .suggestion-container {
+    width: 22%;
+    height: 90%;
+  }
+}
+
+#suggestions .suggestion-container div {
+  height: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#suggestions .suggestion-container div img {
+  width: 1rem;
+  height: 0.9rem;
+}
+
+#suggestions .suggestion-container img {
+  position: relative;
+  width: 100%;
+  height: 90%;
+}
+
+#suggestions .suggestion-container button {
+  position: absolute;
+  bottom: 0.94rem;
+  left: 0.8rem;
+  width: 3.5rem;
+  height: 1.5rem;
+  font-size: 0.7rem;
+  z-index: 20;
+}
+
+@media screen and (min-width: 500px) {
+  #suggestions .suggestion-container button {
+    width: 5rem;
+    height: 2.1rem;
+    font-size: 0.9rem;
+  }
+}
+
+#suggestions .hover-border:hover:before {
+  top: 12%;
+  left: 0.33rem;
+  right: 0.33rem;
+  bottom: 0.33rem;
+  border-width: 2px;
+}
+
+#trends {
+  height: 71.1rem;
+  width: 100%;
+  margin-bottom: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+
+@media screen and (min-width: 500px) {
+  #trends {
+    height: 57.5rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #trends {
+    height: 60rem;
+  }
+}
+
+#trends img {
+  max-height: 100%;
+  width: 47%;
+  height: 18%;
+}
+
+@media screen and (min-width: 500px) {
+  #trends img {
+    width: 32%;
+    height: 22%;
+  }
+  #trends img:nth-last-child(2), #trends img:nth-last-child(6) {
+    width: 66%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #trends img {
+    width: 22%;
+    height: 30%;
+  }
+  #trends img:nth-last-child(2), #trends img:nth-last-child(6) {
+    width: 48%;
+  }
+}
+
+body {
+  background: #ffffff;
+  color: #110038;
+}
+
+body:before {
+  background: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
+  background: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+}
+
+body .header-btn {
+  background: #F7C9F3;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+body .header-btn button, body .header-btn select {
+  color: #110038;
+}
+
+body nav {
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px #B4B4B4, inset 2px 2px #FFFFFF;
+          box-shadow: inset -2px -2px #B4B4B4, inset 2px 2px #FFFFFF;
+}
+
+body nav:before {
+  background: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
+  background: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+}
+
+body nav .nav-btn {
+  background: #E6E6E6;
+  color: #B4B4B4;
+}
+
+body .alternative-searchbar {
+  border: 1px solid #E6BBE2;
+  -webkit-box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+          box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+}
+
+body .suggestion-container {
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+body .suggestion-container div {
+  background: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
+  background: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+}
+
+body .suggestion-container button {
+  background: #4180F6;
+  border: 1px solid #4C2F99;
+  -webkit-box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+}
+/*# sourceMappingURL=whitemode.css.map */

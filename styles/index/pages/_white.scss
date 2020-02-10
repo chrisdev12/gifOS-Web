@@ -1,0 +1,32 @@
+body{
+    background: $white-body;
+    color: $dark-body;
+    
+    &:before{
+       background: $white-topbar-background; 
+    }
+       
+    .header-btn{
+        @include header-white-buttons;
+    }
+    
+    nav{
+        @include white-navbar;
+    }
+    
+    .alternative-searchbar{
+        @include white-alternaitve-searchbar
+    }   
+   
+    .suggestion-container{
+        
+        @include white-gifts-container;
+        
+        div{
+            background: $white-topbar-background;
+        }
+        button{
+            @include main-white-buttons;
+        } 
+    }
+}

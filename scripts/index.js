@@ -2,7 +2,7 @@ const apikey = 'FomuiY9mN225fs0Hy6WPQTYPrumdf6R8';
 const searchbar = document.querySelector('#searchbar');
 const searchButton = document.querySelector('nav button');
 const trendSectionGifts = document.querySelectorAll('#trends img');
-const mainSectionGifts = document.querySelectorAll('#suggestions img');
+const mainSectionGifts = document.querySelectorAll('.suggest-gifts');
 const stylelink = document.querySelector('head link');
 
 //General API request: Working with search and random endpoints.
