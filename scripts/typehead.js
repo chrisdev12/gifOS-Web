@@ -22,9 +22,23 @@ searchbar.addEventListener('keyup', function () {
                 }
             });
             navcontainer.appendChild(searchCoincidencesContainer);
+            addingCoincidence();
             return myJson.data;
         })
         .catch((error) => {
             return error;
         })
 });
+
+
+//Add desired coincidence to searchbar content
+
+function addingCoincidence(){
+    const coincidence = document.querySelectorAll('.coincidences p');
+    coincidence.forEach(element =>
+        element.addEventListener('click', function () {
+            console.log(event.target.innerText);
+            searchbar.value = event.target.innerText;
+        })
+    );
+}

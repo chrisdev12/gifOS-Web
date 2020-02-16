@@ -5,6 +5,7 @@ const trendSectionGifts = document.querySelectorAll('#trends img');
 const mainSectionGifts = document.querySelectorAll('.suggest-gifts');
 const stylelink = document.querySelector('head link');
 const titleSuggestGifts = document.querySelectorAll('.suggestion-container p')
+const mainButtons = document.querySelectorAll('main button');
 
 //General API request: Working with search and random endpoints.
 //NOTE: The gifts URL are on the JSON > images > original > url
@@ -59,9 +60,10 @@ function displayRandomGifts() {
             console.log(content); 
             content.forEach(element => {
                 let giftText = element.title.split(' ');
-                let gift = new Object();
+                let gift = new Object(); //Create an object to organize the URL, title and text to shon on containers.
                 gift.url = element.images.original.url;
                 gift.text = `#${giftText[0]}-${giftText[1]}`;
+                gift.value = element.title;
                 randomGifts.push(gift);         
             });
             
@@ -72,6 +74,7 @@ function displayRandomGifts() {
                 
                 if (i < 4) {
                     mainSectionGifts[i].setAttribute('src', `${randomGifts[i].url}`)
+                    mainButtons[i].setAttribute('value',`${randomGifts[i].value}`)
                     titleSuggestGifts[i].textContent = `${randomGifts[i].text}`;
                 } else {
                     trendSectionGifts[x].setAttribute('src', `${randomGifts[i].url}`)
@@ -83,3 +86,27 @@ function displayRandomGifts() {
             return error;
         })
 }
+
+//------------Main buttons search---------------
+
+mainButtons.forEach(element => {
+    element.addEventListener('click', function () {
+        let trendArray = [];
+        searchGifts(event.target.value, 'search', 10)
+            .then((content) => {
+                content.forEach(element => {
+                    trendArray.push(element.images.original);
+                });
+        
+                for (let i = 0; i < trendArray.length; i++) {
+                    trendSectionGifts[i].setAttribute('src', `${trendArray[i].url}`)
+                };
+            
+                window.location.href = "#trends";
+            })
+            .catch((error) => {
+                return error;
+            })
+    });
+})
+        
