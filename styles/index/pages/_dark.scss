@@ -17,6 +17,10 @@ body{
     }  
     .suggestion-container{
         
+        p{
+            color: $white-body;
+        }
+        
         @include dark-gifts-container;
         
         div{

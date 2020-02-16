@@ -20,6 +20,10 @@ body{
    
     .suggestion-container{
         
+        p{
+            color: $white-body;
+        }
+        
         @include white-gifts-container;
         
         div{

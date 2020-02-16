@@ -5,11 +5,10 @@ header{
     margin-bottom: 4rem;
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 4rem 6.1875rem; 
+    grid-template-rows: 4rem auto; 
     grid-template-areas:
     "header-buttons"
     "searchbar";
-    grid-row-gap: 1.1rem;
 }
 
 //Logo and header buttons: Create guifos and change theme.
@@ -51,6 +50,8 @@ header{
 //Navbar section
 
 nav{ 
+    margin-top: 1.1rem;
+    height: 6.1875rem; 
     grid-area: searchbar; 
     padding-top:  1.8rem;
     position: relative;
