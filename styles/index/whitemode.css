@@ -5,6 +5,7 @@
   border: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -326,6 +327,24 @@ nav input {
   }
 }
 
+.coincidences p:nth-child(1) {
+  position: relative;
+}
+
+.coincidences p:nth-child(1):before {
+  background: none;
+  border: 1px dotted black;
+  content: "";
+  display: block;
+  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+}
+
 #suggestions {
   height: 32rem;
   width: 100%;
@@ -524,6 +543,10 @@ body .coincidences p {
   border: 1px solid #808080;
   -webkit-box-shadow: inset -1px -1px 0 0 #B4B4B4,  inset 1px 1px 0 0 #FFFFFF;
           box-shadow: inset -1px -1px 0 0 #B4B4B4,  inset 1px 1px 0 0 #FFFFFF;
+}
+
+body .coincidences p:nth-child(1) {
+  background-color: #E6E6E6;
 }
 
 body .alternative-searchbar {

@@ -110,6 +110,17 @@ nav{
             }            
         @media screen and (min-width: 800px){
             width: 78.5%;
-        } 
+        }
+        
+        &:nth-child(1){ //Only bord decoration for the first result.
+            position: relative;
+            &:before{ 
+                @include hover-animation;
+                top: 2px;
+                left: 2px;
+                right: 2px;
+                bottom: 2px;
+            }
+        }
     }
 }

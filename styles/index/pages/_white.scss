@@ -17,6 +17,9 @@ body{
     .coincidences{
         p{
             @include white-coincidence-box;
+            &:nth-child(1){
+              background-color: $white-background; 
+            }
         }
     }
     

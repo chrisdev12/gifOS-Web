@@ -5,6 +5,7 @@
   border: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -324,6 +325,24 @@ nav input {
   .coincidences p {
     width: 78.5%;
   }
+}
+
+.coincidences p:nth-child(1) {
+  position: relative;
+}
+
+.coincidences p:nth-child(1):before {
+  background: none;
+  border: 1px dotted black;
+  content: "";
+  display: block;
+  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
 }
 
 #suggestions {
