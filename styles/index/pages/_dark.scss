@@ -8,8 +8,15 @@ body{
     .header-btn{
         @include header-dark-buttons
     }
-    nav{
+    nav,.coincidences{
         @include dark-navbar;
+    }
+    
+    .coincidences{
+        p{
+            color: $dark-body;
+            @include dark-coincidence-box;
+        }
     }
     
     .alternative-searchbar{

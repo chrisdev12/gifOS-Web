@@ -10,8 +10,14 @@ body{
         @include header-white-buttons;
     }
     
-    nav{
+    nav,.coincidences{
         @include white-navbar;
+    }
+    
+    .coincidences{
+        p{
+            @include white-coincidence-box;
+        }
     }
     
     .alternative-searchbar{

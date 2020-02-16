@@ -1,5 +1,10 @@
 const navcontainer = document.querySelector('header');
-let textexample = document.createElement('div');
+let searchCoincidencesContainer = document.createElement('div');
+
+//Add the style that will define the style of our container
+searchCoincidencesContainer.setAttribute('class', 'coincidences');
+
+//Event to get new coincideces once time a new key being pressed
 searchbar.addEventListener('keyup', function () {
     let textSearching = event.target.value;
     fetch(`http://api.giphy.com/v1/gifs/search?api_key=${apikey}&q=${textSearching}&limit=10`) 
@@ -7,18 +12,16 @@ searchbar.addEventListener('keyup', function () {
             return response.json();
         })
         .then((myJson) => {
-            let textCoincidences = myJson.data;
-            console.log(textCoincidences);
             let i = 0; //Iterator; We only should display the fist 3 matches;
-            textexample.innerHTML = ''; //Refresh the result in each search;
-            textCoincidences.forEach(element => {
+            searchCoincidencesContainer.innerHTML = ''; //Refresh the result in each search;
+            myJson.data.forEach(element => {
                 let regex = new RegExp(`${textSearching.toLowerCase()}`);
                 if (regex.test(element.title.toLowerCase()) && i < 3) {
-                    textexample.innerHTML += `<p>${element.title}</p>`;
+                    searchCoincidencesContainer.innerHTML += `<p>${element.title}</p>`;
                     i++;
                 }
             });
-            navcontainer.appendChild(textexample);
+            navcontainer.appendChild(searchCoincidencesContainer);
             return myJson.data;
         })
         .catch((error) => {
