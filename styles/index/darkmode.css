@@ -538,6 +538,14 @@ body nav .nav-btn, body .coincidences .nav-btn {
   color: #8F8F8F;
 }
 
+body nav .nav-btn-input, body .coincidences .nav-btn-input {
+  background: #EE3EFE;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+  color: #ffffff;
+}
+
 body .coincidences p {
   color: #110038;
   background: #CCCCCC;

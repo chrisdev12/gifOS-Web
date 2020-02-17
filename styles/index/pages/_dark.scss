@@ -7,9 +7,21 @@ body{
     }
     .header-btn{
         @include header-dark-buttons
+        
     }
     nav,.coincidences{
         @include dark-navbar;
+        
+        .nav-btn{        
+            background: $dark-background;
+            color: #8F8F8F;
+        }
+        .nav-btn-input{
+            background: #EE3EFE;
+            border: 1px solid #110038;
+            box-shadow: $dark-button-shadow;
+            color: $white-body;
+        } 
     }
     
     .coincidences{

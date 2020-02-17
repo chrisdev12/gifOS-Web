@@ -16,10 +16,6 @@ $white-topbar-background: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
     box-shadow: $white-nav-shadow;
     &:before{
         background: $white-topbar-background; 
-    }
-    .nav-btn{        
-        background: $white-background;
-        color: $dark-background;
     } 
 }
 
@@ -33,10 +29,6 @@ $dark-topbar-background: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
     &:before{
         background: $dark-topbar-background; 
     }
-    .nav-btn{        
-        background: $dark-background;
-        color: #8F8F8F;
-    }  
 }
 //Principal searchbar,located inside of the nav
 

@@ -12,6 +12,17 @@ body{
     
     nav,.coincidences{
         @include white-navbar;
+        
+        .nav-btn{        
+            background: $white-background;
+            color: $dark-background;
+        }
+        .nav-btn-input{
+            background: #F7C9F3;
+            border: 1px solid #110038;
+            box-shadow: $white-button-shadow;
+            color: $dark-body;
+        } 
     }
     
     .coincidences{
