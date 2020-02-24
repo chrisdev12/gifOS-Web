@@ -522,6 +522,7 @@ nav input {
   height: 1.5rem;
   width: 100%;
   display: none;
+  color: #ffffff;
 }
 
 #trends .trend-container:hover .trend-info {

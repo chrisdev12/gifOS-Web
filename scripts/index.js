@@ -4,7 +4,8 @@ const searchButton = document.querySelector('nav button');
 const trendSectionGifts = document.querySelectorAll('#trends img');
 const mainSectionGifts = document.querySelectorAll('.suggest-gifts');
 const stylelink = document.querySelector('head link');
-const titleSuggestGifts = document.querySelectorAll('.suggestion-container p')
+const titleSuggestGifts = document.querySelectorAll('.suggestion-container p');
+const titleTrendGifts = document.querySelectorAll('.trend-container p')
 const mainButtons = document.querySelectorAll('main button');
 
 //General API request: Working with search and random endpoints.
@@ -59,25 +60,31 @@ function displayRandomGifts() {
         .then((content) => {
             console.log(content); 
             content.forEach(element => {
-                let giftText = element.title.split(' ');
+                let giftText = element.title.split(' ').slice(0,4); //Get max 4 words
+                let hashtags = '';
+                giftText.forEach(element =>{ 
+                    hashtags += `#${element} `;
+                })
+                
                 let gift = new Object(); //Create an object to organize the URL, title and text to shon on containers.
                 gift.url = element.images.original.url;
-                gift.text = `#${giftText[0]}-${giftText[1]}`;
+                gift.text = `${hashtags}` || '#Not #Gift #Title #Available';
                 gift.value = element.title;
                 randomGifts.push(gift);         
             });
-            
+            console.log(randomGifts)
             let x = 0; //Iterator for trendSectionGifts that are in another section and
             //begin from 0
         
             for (let i = 0; i < randomGifts.length; i++){
                 
                 if (i < 4) {
-                    mainSectionGifts[i].setAttribute('src', `${randomGifts[i].url}`)
-                    mainButtons[i].setAttribute('value',`${randomGifts[i].value}`)
+                    mainSectionGifts[i].setAttribute('src', `${randomGifts[i].url}`);
+                    mainButtons[i].setAttribute('value', `${randomGifts[i].value}`);
                     titleSuggestGifts[i].textContent = `${randomGifts[i].text}`;
                 } else {
-                    trendSectionGifts[x].setAttribute('src', `${randomGifts[i].url}`)
+                    trendSectionGifts[x].setAttribute('src', `${randomGifts[i].url}`);
+                    titleTrendGifts[x].textContent = `${randomGifts[i].text}`;
                     x++
                 }
             };
