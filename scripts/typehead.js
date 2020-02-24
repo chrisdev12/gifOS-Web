@@ -23,6 +23,7 @@ searchbar.addEventListener('keyup', function () {
             });
             navcontainer.appendChild(searchCoincidencesContainer);
             addingCoincidence();
+            monitorCoincidenceContainer();
             return myJson.data;
         })
         .catch((error) => {
@@ -41,4 +42,14 @@ function addingCoincidence(){
             searchbar.value = event.target.innerText;
         })
     );
+}
+
+//Monitor the coincidence container to avoid that will be showed empty
+
+function monitorCoincidenceContainer() {
+    if (searchbar.value.length === 0) {
+        searchCoincidencesContainer.style.display = 'none';
+    } else {
+        searchCoincidencesContainer.style.display = 'block';
+    }
 }

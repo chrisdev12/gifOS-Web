@@ -87,3 +87,15 @@ button , select{
         bottom: 2px;
     }
 }
+
+//Border styles when the main buttons will hovered
+
+#suggestions .btn-main:hover:hover{
+    &:before{
+        top: 3px;
+        left: 3px;
+        right: 3px;
+        bottom: 3px;
+        border-width: 1px; 
+    }
+}

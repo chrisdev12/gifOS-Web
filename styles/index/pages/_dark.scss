@@ -9,9 +9,9 @@ body{
         @include header-dark-buttons
         
     }
+    
     nav,.coincidences{
-        @include dark-navbar;
-        
+        @include dark-navbar;    
         .nav-btn{        
             background: $dark-background;
             color: #8F8F8F;
@@ -33,9 +33,10 @@ body{
     
     .alternative-searchbar{
         @include dark-alternative-searchbar
-    }  
-    .suggestion-container{
-        
+    }
+    
+    //Gifts that are in the main are on suggestion container  
+    .suggestion-container{   
         p{
             color: $white-body;
         }
@@ -44,9 +45,22 @@ body{
         
         div{
             background: $dark-topbar-background;
-        }  
+        }
+          
         button{
            @include main-dark-buttons;
+           
+           &:hover{
+                background-color: #2629CC;
+            }
+        }
+    }
+    
+    //Gifts that are in the trend section (the results of the searches)
+    //are in the trend containers  
+    .trend-container{     
+        .trend-info{
+            background: $dark-topbar-background;
         }
     }
 

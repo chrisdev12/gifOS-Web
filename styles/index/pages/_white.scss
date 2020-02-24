@@ -38,6 +38,7 @@ body{
         @include white-alternaitve-searchbar
     }   
    
+    //Gifts that are in the main are on suggestion container
     .suggestion-container{
         
         p{
@@ -51,6 +52,20 @@ body{
         }
         button{
             @include main-white-buttons;
+            
+            &:hover{
+                background-color: #3A72DB;
+            }
         } 
+    }
+    
+    //Gifts that are in the trend section (the results of the searches)
+    //are in the trend containers
+    
+    .trend-container{
+        
+        .trend-info{
+            background: $white-topbar-background;
+        }
     }
 }

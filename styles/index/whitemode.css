@@ -159,6 +159,14 @@ button, select {
   bottom: 2px;
 }
 
+#suggestions .btn-main:hover:hover:before {
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border-width: 1px;
+}
+
 .alternative-searchbar {
   width: 100%;
   height: 2rem;
@@ -476,30 +484,48 @@ nav input {
   }
 }
 
-#trends img {
+#trends .trend-container {
   max-height: 100%;
   width: 47%;
   height: 18%;
+  position: relative;
 }
 
 @media screen and (min-width: 500px) {
-  #trends img {
+  #trends .trend-container {
     width: 32%;
     height: 22%;
   }
-  #trends img:nth-last-child(2), #trends img:nth-last-child(6) {
+  #trends .trend-container:nth-last-child(2), #trends .trend-container:nth-last-child(6) {
     width: 66%;
   }
 }
 
 @media screen and (min-width: 800px) {
-  #trends img {
+  #trends .trend-container {
     width: 22%;
     height: 30%;
   }
-  #trends img:nth-last-child(2), #trends img:nth-last-child(6) {
+  #trends .trend-container:nth-last-child(2), #trends .trend-container:nth-last-child(6) {
     width: 48%;
   }
+}
+
+#trends .trend-container img {
+  width: 100%;
+  height: 100%;
+}
+
+#trends .trend-container .trend-info {
+  position: absolute;
+  bottom: 0;
+  height: 1.5rem;
+  width: 100%;
+  display: none;
+}
+
+#trends .trend-container:hover .trend-info {
+  display: block;
 }
 
 body {
@@ -583,5 +609,14 @@ body .suggestion-container button {
   border: 1px solid #4C2F99;
   -webkit-box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
           box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+}
+
+body .suggestion-container button:hover {
+  background-color: #3A72DB;
+}
+
+body .trend-container .trend-info {
+  background: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
+  background: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
 }
 /*# sourceMappingURL=whitemode.css.map */
