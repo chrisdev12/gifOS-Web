@@ -1,0 +1,36 @@
+main{
+    width: 100%;
+    margin-top: 5.5rem;
+    display: flex;
+    justify-content: center;
+     
+    .upload-container{   
+        position: relative;
+        height: 34.25rem;
+        width: 53.75rem;
+        padding: 0.19rem 0.25rem 0.25rem 0.25rem;
+        display: flex;
+        flex-direction: column;
+       
+        
+        @include white-gifts-container;
+        
+        .upload-info{
+            background: $white-topbar-background;
+            color: $white-body;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+        .upload-actions{
+            display: flex;
+            justify-content: space-between;
+            
+            button{
+               height: 2.25rem; 
+            }
+        }
+    }    
+    
+}

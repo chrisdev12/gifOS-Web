@@ -1,0 +1,20 @@
+body{
+    background: $white-body;
+    color: $dark-body;
+
+    &:before{
+        content: '¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803';
+        position: absolute;
+        top: 0.0625rem;
+        right: 0.0625rem;
+        left: 0.0625rem;
+        height: 1.4rem;
+        padding-left: 0.43rem;
+        font-size: 0.6rem;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+        box-shadow: 0 1px 0 0 #110038;
+        background: $white-topbar-background;   
+    }
+}
