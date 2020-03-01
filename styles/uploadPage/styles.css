@@ -89,7 +89,7 @@ main {
           justify-content: center;
 }
 
-main .pre-upload-container, main .upload-container {
+main .instructions-container, main .upload-container {
   position: relative;
   padding: 0.19rem 0.25rem 0.25rem 0.25rem;
   display: -webkit-box;
@@ -112,15 +112,15 @@ main .pre-upload-container, main .upload-container {
           box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 }
 
-main .pre-upload-container h1, main .upload-container h1 {
+main .instructions-container h1, main .upload-container h1 {
   font-size: 1rem;
 }
 
-main .pre-upload-container p, main .upload-container p {
+main .instructions-container p, main .upload-container p {
   font-size: 0.9rem;
 }
 
-main .pre-upload-container .upload-info, main .upload-container .upload-info {
+main .instructions-container .upload-info, main .upload-container .upload-info {
   background: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
   background: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
   color: #ffffff;
@@ -138,7 +138,7 @@ main .pre-upload-container .upload-info, main .upload-container .upload-info {
   right: 0.25rem;
 }
 
-main .pre-upload-container {
+main .instructions-container {
   width: 80%;
   height: 29rem;
   -webkit-box-align: center;
@@ -147,25 +147,25 @@ main .pre-upload-container {
 }
 
 @media screen and (min-width: 600px) {
-  main .pre-upload-container {
+  main .instructions-container {
     width: 80%;
     height: 24.6rem;
   }
 }
 
 @media screen and (min-width: 1000px) {
-  main .pre-upload-container {
+  main .instructions-container {
     width: 42.75rem;
   }
 }
 
-main .pre-upload-container img {
+main .instructions-container img {
   position: absolute;
   display: none;
 }
 
 @media screen and (min-width: 600px) {
-  main .pre-upload-container img {
+  main .instructions-container img {
     display: block;
     left: 0.8rem;
     top: 3.5rem;
@@ -173,23 +173,23 @@ main .pre-upload-container img {
 }
 
 @media screen and (min-width: 1000px) {
-  main .pre-upload-container img {
+  main .instructions-container img {
     left: 1.5rem;
     top: 3.5rem;
   }
 }
 
-main .pre-upload-container .upload-instructions {
+main .instructions-container .upload-instructions {
   margin-top: 1.875rem;
   width: 80%;
   max-height: 80%;
 }
 
-main .pre-upload-container .upload-instructions ol {
+main .instructions-container .upload-instructions ol {
   list-style: none;
 }
 
-main .pre-upload-container .upload-actions {
+main .instructions-container .upload-actions {
   width: 85%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -202,7 +202,7 @@ main .pre-upload-container .upload-actions {
           align-items: center;
 }
 
-main .pre-upload-container .upload-actions button {
+main .instructions-container .upload-actions button {
   width: 9rem;
   height: 2.25rem;
   margin-left: 1rem;
@@ -242,7 +242,12 @@ main .upload-container .upload-info {
           justify-content: space-between;
 }
 
+main .upload-container img {
+  cursor: pointer;
+}
+
 main .upload-container .upload-actions {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
