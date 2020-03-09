@@ -117,7 +117,8 @@ main{
             justify-content: space-between;
         }
         
-        img{
+        video{
+            height: 85%;
             cursor: pointer;
         }
         
@@ -127,7 +128,8 @@ main{
             justify-content: space-between;
             
             button{
-               height: 2.25rem; 
+               height: 2.25rem;
+               width: 4rem;
             }
         }
     }    

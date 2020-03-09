@@ -242,7 +242,8 @@ main .upload-container .upload-info {
           justify-content: space-between;
 }
 
-main .upload-container img {
+main .upload-container video {
+  height: 85%;
   cursor: pointer;
 }
 
@@ -258,6 +259,7 @@ main .upload-container .upload-actions {
 
 main .upload-container .upload-actions button {
   height: 2.25rem;
+  width: 4rem;
 }
 
 #mygifs {
