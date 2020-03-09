@@ -1,41 +1,51 @@
 const video_place = document.getElementsByTagName('video')[0];
-const captionAction = document.getElementById('caption');
+const captionButton = document.getElementById('caption');
 const constraints = { audio: false, video: { height: { max: 480 } } }
-let caption = null; //Here We go to save the current caption to be able to stop it if required.  
+const recordObject = {
+    type: 'gif',
+    frameRate: 1,
+    quality: 10,
+    width: 360,
+    hidden: 240,
+    startRecording: function () { },
+    stopRecording: function (blobURL) {
+        return blobURL
+    }
+};
 
+let currTrack = null; //"Track" the current video | Reasigned on startVideoCaption()  
 
-//modifier of the button text. 
+//-------------------------------------------------------------------
+//Display the video through the webcam (not implies be recording)
 
-captionAction.addEventListener('click', beginStop_caption);
+begin.addEventListener('click', startVideoCaption)
 
+function startVideoCaption() {  
+    navigator.mediaDevices.getUserMedia(constraints)
+        .then(function (stream) {
+            console.log(stream);
+            video_place.srcObject = stream;
+            video_place.play();
+            currTrack = stream.getTracks()[0];
+    })
+}
 
-function beginStop_caption(event) {
-    
+//Main behavior funcion to create and stop stored. 
+captionButton.addEventListener('click', recordingLogic);
+
+function recordingLogic(event) {  
     switch (event.target.innerText) {
         case 'Capturar':
-            captionAction.innerText = 'Listo';
-            startVideoCaption();
+            captionButton.innerText = 'Listo';
+            initRecorder('Capturar',currTrack);
             break;
         case 'Listo':
-            stopVideoCaption(caption);
+            captionButton.innerText = 'Capturar';
+            initRecorder('Listo',currTrack);
             break;
     } 
 }
 
-function startVideoCaption() {
-    navigator.mediaDevices.getUserMedia(constraints)
-    .then(function (stream) {
-        video_place.srcObject = stream;
-        video_place.play();
-        
-        caption = stream.getTracks()[0];
-        console.log(caption);
-    })
-}
 
-//Receives the current track, that is the caption that the camera is displaying
-// and stopt it    
-function stopVideoCaption(caption) {
-    caption.stop()
-}
+
 
