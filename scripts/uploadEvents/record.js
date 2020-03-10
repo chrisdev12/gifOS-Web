@@ -1,7 +1,19 @@
+const recordObject = {
+    type: 'video',
+    frameRate: 1,
+    quality: 10,
+    startRecording: function () { },
+    stopRecording: function (blobURL) {
+        return blobURL
+    },
+    getBlob: function () { },
 
-/* Function that receives 2 parameters, the first one is mandatory and determines
-the action of the recorder, the 2 possibilities stop the camera recording on the browser
-and only will be used on the 'stop' conditions.
+};
+
+
+/* Function that receives 2 parameters, the first  determines
+the action of the recorder. The second possibilities stop the
+ camera recording on the browserand only will be used on the 'stop' conditions.
  */
 async function initRecorder(status, track) {
     try {
@@ -14,7 +26,11 @@ async function initRecorder(status, track) {
             recorder = RecordRTC(gif, recordObject);
             recorder.startRecording();
         } else if (status == 'Listo') {
-            recorder.stopRecording();
+            recorder.stopRecording(
+                function () {
+                    let blob = recorder.getBlob(); //getBlob must be passed as callback when our record is type:video
+                    storeGif(blob);//On storage.js | Manipulate the recorded file and store it
+                });
             track.stop();
         }
     }

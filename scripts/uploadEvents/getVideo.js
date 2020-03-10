@@ -1,18 +1,6 @@
 const video_place = document.getElementsByTagName('video')[0];
 const captionButton = document.getElementById('caption');
 const constraints = { audio: false, video: { height: { max: 480 } } }
-const recordObject = {
-    type: 'gif',
-    frameRate: 1,
-    quality: 10,
-    width: 360,
-    hidden: 240,
-    startRecording: function () { },
-    stopRecording: function (blobURL) {
-        return blobURL
-    }
-};
-
 let currTrack = null; //"Track" the current video | Reasigned on startVideoCaption()  
 
 //-------------------------------------------------------------------
@@ -23,7 +11,6 @@ begin.addEventListener('click', startVideoCaption)
 function startVideoCaption() {  
     navigator.mediaDevices.getUserMedia(constraints)
         .then(function (stream) {
-            console.log(stream);
             video_place.srcObject = stream;
             video_place.play();
             currTrack = stream.getTracks()[0];
