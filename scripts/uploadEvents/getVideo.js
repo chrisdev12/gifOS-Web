@@ -1,8 +1,5 @@
-const video_place = document.getElementsByTagName('video')[0];
-const captionButton = document.getElementById('caption');
 const constraints = { audio: false, video: { height: { max: 480 } } }
 let currTrack = null; //"Track" the current video | Reasigned on startVideoCaption()  
-
 //-------------------------------------------------------------------
 //Display the video through the webcam (not implies be recording)
 
@@ -17,12 +14,12 @@ function startVideoCaption() {
     })
 }
 
-//Main behavior funcion to create and stop stored. 
 captionButton.addEventListener('click', recordingLogic);
 
-function recordingLogic(event) {  
+
+function recordingLogic(event) { 
     switch (event.target.innerText) {
-        case 'Capturar':
+        case ('Capturar' || 'Repetir captura'):
             captionButton.innerText = 'Listo';
             initRecorder('Capturar',currTrack);
             break;
@@ -30,9 +27,26 @@ function recordingLogic(event) {
             captionButton.innerText = 'Capturar';
             initRecorder('Listo',currTrack);
             break;
+        case 'Repetir captura':
+            rebuildVideo();
+            destroyGif();
+            break;
     } 
 }
 
+//Alter the dom to show again the video when the user want retake his gifo record
+function rebuildVideo() {
+    let upload = document.getElementById('upload');
+    uploadActions[1].removeChild(upload)
+    captionButton.innerText = 'Capturar'
+    video_place.style.display = 'block'
+    startVideoCaption()
 
+}
 
+//Destroy / remove the img that contains the unwished gif
+function destroyGif() {
+    let gif = document.getElementsByClassName('createdGif')[0];
+    uploadContainer.removeChild(gif)
+}
 

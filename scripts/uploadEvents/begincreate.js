@@ -1,17 +1,17 @@
-const begin = document.querySelector('#begin');
-const uploadContainer = document.querySelector('.upload-container');
-const instructionsContainer = document.querySelector('.instructions-container');
-const myGifsContainer = document.querySelector('#myGifs');
+const begin = document.getElementById('begin');
+const uploadContainer = document.getElementsByClassName('upload-container')[0];
+const instructionsContainer = document.getElementsByClassName('instructions-container')[0];
+const myGifsContainer = document.getElementById('myGifs');
 const uploadCloseWindow = document.querySelector('.upload-container .upload-info img');
+const video_place = document.getElementsByTagName('video')[0];
+const uploadActions = document.getElementsByClassName('upload-actions')
+let captionButton = document.getElementById('caption');
 
 //Hide instruction/pre-upload-container and display the upload-container (whereas the gifts will be captioned)
-begin.addEventListener('click', function () {
-    showCaption();
-});
+begin.addEventListener('click',showCaption)
 
-uploadCloseWindow.addEventListener('click', function () {
-    showInstruction();
-})
+uploadCloseWindow.addEventListener('click', showInstruction)
+
 
 function showCaption() {
     instructionsContainer.style.display = 'none';

@@ -1,5 +1,5 @@
 const recordObject = {
-    type: 'video',
+    type: 'gif',
     frameRate: 1,
     quality: 10,
     startRecording: function () { },
@@ -26,25 +26,17 @@ async function initRecorder(status, track) {
             recorder = RecordRTC(gif, recordObject);
             recorder.startRecording();
         } else if (status == 'Listo') {
+            track.stop();
             recorder.stopRecording(
                 function () {
-                    let blob = recorder.getBlob(); //getBlob must be passed as callback when our record is type:video
-                    storeGif(blob);//On storage.js | Manipulate the recorded file and store it
-                });
-            track.stop();
+                    //getBlob should be passed as callback, and manipulate the recorded file and store it on storage.js
+                    let blob = recorder.getBlob(); 
+                    storeGif(blob);
+                }
+            );
         }
     }
     catch(err){
         throw new Error(`error al crear el objeto RecordRTC: "${err}"`);
     }    
-}
-
-
-function stopRecorder() {
-    
-}
-
-function storeUrl(res) {
-    console.log(res)
-    var res = res;
 }
