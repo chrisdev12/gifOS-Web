@@ -13,7 +13,7 @@ const mainButtons = document.querySelectorAll('main button');
 
 function searchGifts(search,endpoint,limit) {
     
-    let a = fetch(`http://api.giphy.com/v1/gifs/${endpoint}?api_key=${apikey}&q=${search}&limit=${limit}`) 
+    let req = fetch(`http://api.giphy.com/v1/gifs/${endpoint}?api_key=${apikey}&q=${search}&limit=${limit}`) 
         .then((response) => {
             return response.json();
             })
@@ -24,7 +24,7 @@ function searchGifts(search,endpoint,limit) {
                 return error;
             })
     
-    return a;
+    return req;
 }
 
 
@@ -50,15 +50,14 @@ searchButton.addEventListener('click', function () {
 //First APi request, do the first populate of gifsts that are visible for 
 //first time in the page
 
-displayRandomGifts();
+displayRandomGifos();
 
-function displayRandomGifts() {
+function displayRandomGifos() {
 
-    let randomGifts = []; //List of objects that contains the URL and title of each random gift
+    let randomGifos = []; //List of objects that contains the URL and title of each random gift
     
     searchGifts(null, 'trending', 14)
         .then((content) => {
-            console.log(content); 
             content.forEach(element => {
                 let giftText = element.title.split(' ').slice(0,4); //Get max 4 words
                 let hashtags = '';
@@ -66,25 +65,23 @@ function displayRandomGifts() {
                     hashtags += `#${element} `;
                 })
                 
-                let gift = new Object(); //Create an object to organize the URL, title and text to shon on containers.
-                gift.url = element.images.original.url;
-                gift.text = `${hashtags}` || '#Not #Gift #Title #Available';
-                gift.value = element.title;
-                randomGifts.push(gift);         
+                let gifo = new Object(); //Create an object to organize the URL, title and text to shon on containers.
+                gifo.url = element.images.original.url;
+                gifo.text = `${hashtags}` || '#Not #Gift #Title #Available';
+                gifo.value = element.title;
+                randomGifos.push(gifo);         
             });
-            console.log(randomGifts)
-            let x = 0; //Iterator for trendSectionGifts that are in another section and
-            //begin from 0
-        
-            for (let i = 0; i < randomGifts.length; i++){
+            
+            let x = 0; //Iterator for gifos of trendSectionGifts that are in another section/container  
+            for (let i = 0; i < randomGifos.length; i++){
                 
                 if (i < 4) {
-                    mainSectionGifts[i].setAttribute('src', `${randomGifts[i].url}`);
-                    mainButtons[i].setAttribute('value', `${randomGifts[i].value}`);
-                    titleSuggestGifts[i].textContent = `${randomGifts[i].text}`;
+                    mainSectionGifts[i].setAttribute('src', `${randomGifos[i].url}`);
+                    mainButtons[i].setAttribute('value', `${randomGifos[i].value}`);
+                    titleSuggestGifts[i].textContent = `${randomGifos[i].text}`;
                 } else {
-                    trendSectionGifts[x].setAttribute('src', `${randomGifts[i].url}`);
-                    titleTrendGifts[x].textContent = `${randomGifts[i].text}`;
+                    trendSectionGifts[x].setAttribute('src', `${randomGifos[i].url}`);
+                    titleTrendGifts[x].textContent = `${randomGifos[i].text}`;
                     x++
                 }
             };

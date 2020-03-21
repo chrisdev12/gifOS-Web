@@ -1,23 +1,29 @@
+let gif = document.createElement('img');
+
 function storeGif(blob) {
-    
-    const form = new FormData();
-    form.append('file', blob, 'file.gif');
-    let url = URL.createObjectURL(blob);
-    showRecordedGif(url)
+    try {
+        const form = new FormData();
+        form.append('file', blob, 'file.gif');
+        let url = URL.createObjectURL(blob);
+        showRecordedGif(url,form)
+    } catch (error) {
+        throw new Error(`Error en storeGif: ${error}`)
+    }
 }
 
-function showRecordedGif(url) {
-    let uploadUI = uploadActions[1];
+function showRecordedGif(url, file) {
+    let videoButtons = uploadActions[1];
     video_place.style.display = 'none';
-    let gif = document.createElement('img');
     gif.classList.add('createdGif');
     gif.src = url;
-    let repButton = document.createElement('button');
-    repButton.innerText = 'Subir Guifo'
-    repButton.setAttribute('id', 'upload')
+    let upload = document.createElement('button');
+    upload.innerText = 'Subir Guifo'
+    upload.setAttribute('id', 'upload')
     
-    //-----Insert the new buttons and gif to the container-----
-    uploadContainer.insertBefore(gif, uploadUI);
-    uploadUI.appendChild(repButton);
-    captionButton.innerText = 'Repetir captura'
+    //-----Insert the new buttons and gif on their respective container-----
+    uploadContainer.insertBefore(gif, videoButtons); //Insert gif before the buttons container
+    videoButtons.appendChild(upload); //Inser a new button on the buttons container
+    captionButton.innerText = 'Repetir captura';
+    
+    createUploadEvent(file)
 }
