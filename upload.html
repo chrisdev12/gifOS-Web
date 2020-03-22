@@ -71,8 +71,9 @@
             <video autoplay>
             </video>
             <div class=" upload-actions">
-                <span id="timer">
-                    <p></p>
+                <span>
+                    <span class="timer"></span>
+                    <span class="timer"></span>
                 </span>
                 <button id="caption">
                     Capturar
@@ -82,13 +83,12 @@
     </main>
     <section id="myGifs">
         <input class="alternative-searchbar" type="text" placeholder="Mis guifos:">
-
-
     </section>
     <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
     <script src="./scripts/uploadEvents/index.js"></script>
     <script src="./scripts/uploadEvents/initVideo.js"></script>
-    <script src="./scripts/uploadEvents/record.js"></script>
+    <script src="./scripts/uploadEvents/initRecorder.js"></script>
+    <script src="./scripts/uploadEvents/timer.js"></script>
     <script src="./scripts/uploadEvents/storage.js"></script>
     <script src="./scripts/uploadEvents/postApi.js"></script>
 </body>

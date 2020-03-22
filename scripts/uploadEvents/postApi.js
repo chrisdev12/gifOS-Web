@@ -22,8 +22,9 @@ function postEndpoint(gif) {
             }).then((response) => {
                 return response.json()
             }).then((myjson) => {
-                console.log(myjson.data)
-                successfulUpload(myjson.data)
+                let id = myjson.data.id
+                console.log(id)
+                successfulUpload(id)
             }).catch((error) => {
                throw new Error (error)
             })
@@ -36,9 +37,8 @@ function postEndpoint(gif) {
 function successfulUpload(res) {
     //here should be implemented a Timer load
     localStorage.setItem('upload', res);
-    console.log(gif)
+    
     let videoButtons = uploadActions[1];
     uploadContainer.insertBefore(gif, videoButtons);
-    // 
 }
     

@@ -25,7 +25,9 @@ async function initRecorder(status, track) {
             currTrack = gif.getTracks()[0];
             recorder = RecordRTC(gif, recordObject);
             recorder.startRecording();
+            timer.start()
         } else if (status == 'Listo') {
+            timer.stop()
             track.stop();
             recorder.stopRecording(
                 function () {

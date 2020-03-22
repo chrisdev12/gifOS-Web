@@ -30,6 +30,8 @@ function recordingLogic(event) {
         case 'Repetir captura':
             rebuildVideo();
             destroyGif();
+            seconds.innerText = '';
+            minutes.innerText = '';
             break;
     } 
 }
