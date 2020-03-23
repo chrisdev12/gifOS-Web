@@ -1,4 +1,4 @@
-let gif = document.createElement('img');
+let newGif = document.createElement('img');
 
 function storeGif(blob) {
     try {
@@ -14,14 +14,14 @@ function storeGif(blob) {
 function showRecordedGif(url, file) {
     let videoButtons = uploadActions[1];
     video_place.style.display = 'none';
-    gif.classList.add('createdGif');
-    gif.src = url;
+    newGif.classList.add('createdGif');
+    newGif.src = url;
     let upload = document.createElement('button');
     upload.innerText = 'Subir Guifo'
     upload.setAttribute('id', 'upload')
     
     //-----Insert the new buttons and gif on their respective container-----
-    uploadContainer.insertBefore(gif, videoButtons); //Insert gif before the buttons container
+    uploadContainer.insertBefore(newGif, videoButtons); //Insert gif before the buttons container
     videoButtons.appendChild(upload); //Inser a new button on the buttons container
     captionButton.innerText = 'Repetir captura';
     

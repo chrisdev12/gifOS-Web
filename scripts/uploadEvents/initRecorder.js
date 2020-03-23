@@ -7,25 +7,19 @@ const recordObject = {
         return blobURL
     },
     getBlob: function () { },
-
 };
 
-
-/* Function that receives 2 parameters, the first  determines
-the action of the recorder. The second possibilities stop the
- camera recording on the browserand only will be used on the 'stop' conditions.
+/* Function that receives 2 parameters, the first  determines the action 
+of the recorder. The second possibilities stop the camera recording on the 
+browserand only will be used on the 'stop' conditions.
  */
-async function initRecorder(status, track) {
+
+function initRecorder(status, track) {
     try {
         if (status == 'Capturar') {
-            track.stop();
-            let gif = await navigator.mediaDevices.getUserMedia(constraints);
-            video_place.srcObject = gif;
-            video_place.play();
-            currTrack = gif.getTracks()[0];
-            recorder = RecordRTC(gif, recordObject);
-            recorder.startRecording();
             timer.start()
+            recorder = RecordRTC(video, recordObject);
+            recorder.startRecording();
         } else if (status == 'Listo') {
             timer.stop()
             track.stop();

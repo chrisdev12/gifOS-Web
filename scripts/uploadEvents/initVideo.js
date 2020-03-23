@@ -1,16 +1,27 @@
-const constraints = { audio: false, video: { height: { max: 480 } } }
-let currTrack = null; //"Track" the current video | Reasigned on startVideoCaption()  
+let currTrack = null; //"Track" of the current videoCaption
+let video = null; 
+
 //-------------------------------------------------------------------
 //Display the video through the webcam (not implies be recording)
 
+uploadCloseWindow.addEventListener('click', cancel)
+
 begin.addEventListener('click', startVideoCaption)
 
-function startVideoCaption() {  
+function startVideoCaption() { 
+    const constraints = {
+        audio: false,
+        video: {
+            height: { max: 480 }
+        }
+    }
+    
     navigator.mediaDevices.getUserMedia(constraints)
-        .then(function (stream) {
+        .then( (stream) => {
             video_place.srcObject = stream;
             video_place.play();
             currTrack = stream.getTracks()[0];
+            video = stream
     })
 }
 
@@ -19,7 +30,10 @@ captionButton.addEventListener('click', recordingLogic);
 
 function recordingLogic(event) { 
     switch (event.target.innerText) {
-        case ('Capturar' || 'Repetir captura'):
+        case ('Capturar'):
+            time[0].innerText = '00';
+            time[1].innerText = ':';
+            time[2].innerText = '00';
             captionButton.innerText = 'Listo';
             initRecorder('Capturar',currTrack);
             break;
@@ -28,10 +42,11 @@ function recordingLogic(event) {
             initRecorder('Listo',currTrack);
             break;
         case 'Repetir captura':
+            time[0].innerText = '';
+            time[1].innerText = '';
+            time[2].innerText = '';
             rebuildVideo();
-            destroyGif();
-            seconds.innerText = '';
-            minutes.innerText = '';
+            destroyGif();   
             break;
     } 
 }
@@ -43,7 +58,6 @@ function rebuildVideo() {
     captionButton.innerText = 'Capturar'
     video_place.style.display = 'block'
     startVideoCaption()
-
 }
 
 //Destroy / remove the img that contains the unwished gif
@@ -52,3 +66,7 @@ function destroyGif() {
     uploadContainer.removeChild(gif)
 }
 
+function cancel() {
+    alert('La grabación y/o el gif actual se perderan')
+    window.location = 'upload.html'
+}
