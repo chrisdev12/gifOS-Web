@@ -208,11 +208,28 @@ main .instructions-container .upload-actions button {
   margin-left: 1rem;
 }
 
+#mygifs {
+  margin-top: 9.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 main .upload-container {
+  width: 80%;
   height: 34.25rem;
-  width: 53.75rem;
   padding: 0.19rem 0.25rem 0.25rem 0.25rem;
   display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 @media screen and (min-width: 600px) {
@@ -224,8 +241,8 @@ main .upload-container {
 
 @media screen and (min-width: 1000px) {
   main .upload-container {
-    width: 42.75rem;
-    height: 24.125rem;
+    width: 53.75rem;
+    height: 34.25rem;
   }
 }
 
@@ -237,17 +254,37 @@ main .upload-container .upload-info {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
-main .upload-container video {
-  height: 85%;
-  cursor: pointer;
+main .upload-container .showvideo {
+  margin-top: 2rem;
+  width: 98%;
+  height: 80%;
+  padding: 0.125rem;
+  -webkit-box-shadow: inset -2px -2px 0 0 #ffffff,  inset 2px 2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #ffffff,  inset 2px 2px 0 0 #000000;
+}
+
+main .upload-container .showvideo video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main .upload-container .showvideo img {
+  width: 100%;
+  height: 100%;
 }
 
 main .upload-container .upload-actions {
+  height: 10%;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -255,6 +292,9 @@ main .upload-container .upload-actions {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 main .upload-container .upload-actions button {
@@ -262,13 +302,10 @@ main .upload-container .upload-actions button {
   width: 4rem;
 }
 
-#mygifs {
-  margin-top: 9.6rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+main .upload-container .upload-actions .active_record {
+  background: #FF6161;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
 }
 /*# sourceMappingURL=styles.css.map */

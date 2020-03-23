@@ -1,13 +1,3 @@
-// Post our blob to the upload Giphy endpoint if is required
-
-function createUploadEvent(gif) {
-    let upload = document.getElementById('upload');
-    
-    upload.addEventListener('click', function () {
-        postEndpoint(gif)
-    })
-}
-
 /*https://muffinman.io/uploading-files-using-fetch-multipart-form-data/ 
 Must be viewed to comprenhense why 'content-Type': 'multipart/form-data' must be not
 included */

@@ -12,7 +12,7 @@ function startVideoCaption() {
     const constraints = {
         audio: false,
         video: {
-            height: { max: 480 }
+            height: { max: 720 }
         }
     }
     
@@ -35,6 +35,7 @@ function recordingLogic(event) {
             time[1].innerText = ':';
             time[2].innerText = '00';
             captionButton.innerText = 'Listo';
+            captionButton.setAttribute('class','active_record')
             initRecorder('Capturar',currTrack);
             break;
         case 'Listo':
@@ -45,13 +46,13 @@ function recordingLogic(event) {
             time[0].innerText = '';
             time[1].innerText = '';
             time[2].innerText = '';
-            rebuildVideo();
-            destroyGif();   
+            destroyGif(); 
+            rebuildVideo(); 
             break;
     } 
 }
 
-//Alter the dom to show again the video when the user want retake his gifo record
+//Alter the dom to show again the video when the user require retake a gifo record
 function rebuildVideo() {
     let upload = document.getElementById('upload');
     uploadActions[1].removeChild(upload)
@@ -60,10 +61,10 @@ function rebuildVideo() {
     startVideoCaption()
 }
 
-//Destroy / remove the img that contains the unwished gif
+//Destroy / remove the the unwished gif element
 function destroyGif() {
     let gif = document.getElementsByClassName('createdGif')[0];
-    uploadContainer.removeChild(gif)
+    captionContainer.removeChild(gif)
 }
 
 function cancel() {

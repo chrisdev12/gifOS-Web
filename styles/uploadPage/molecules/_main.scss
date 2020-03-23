@@ -54,17 +54,16 @@ main{
         img{ //Image only should appears in med and big screens
             position: absolute;
             display: none;
+            
             @media screen and (min-width: 600px){
                 display: block;
                 left: 0.8rem;
-                top: 3.5rem;
-            
+                top: 3.5rem; 
             }
             
             @media screen and (min-width: 1000px){
                 left: 1.5rem;
-                top: 3.5rem;
-                
+                top: 3.5rem;           
             }
         }
 
@@ -72,7 +71,6 @@ main{
             margin-top: 1.875rem;
             width: 80%;
             max-height: 80%;
-            
             
             ol{
                 list-style: none;
@@ -91,47 +89,5 @@ main{
                 margin-left: 1rem;
             }
         }
-    }
-    
-    
-    //-------------Upload container--------------------
-    .upload-container{   
-        height: 34.25rem;
-        width: 53.75rem;
-        padding: 0.19rem 0.25rem 0.25rem 0.25rem;
-        display: none;
-        
-         @media screen and (min-width: 600px){
-            width: 80%;       
-            height: 30rem;
-        }
-        
-        @media screen and (min-width: 1000px){
-            width: 42.75rem;       
-            height: 24.125rem;
-        }
-        
-        .upload-info{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-        
-        video{
-            height: 85%;
-            cursor: pointer;
-        }
-        
-        .upload-actions{
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            
-            button{
-               height: 2.25rem;
-               width: 4rem;
-            }
-        }
-    }    
-    
+    }  
 }
