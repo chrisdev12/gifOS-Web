@@ -63,6 +63,35 @@ body:before {
   background: #F7C9F3;
 }
 
+.upload-actions .upload-buttons {
+  width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.upload-actions .upload-buttons button {
+  height: 2.25rem;
+  width: 6rem;
+  margin-left: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .upload-actions .upload-buttons button {
+    width: 8rem;
+  }
+}
+
+.upload-actions .upload-buttons .active_record {
+  background: #FF6161;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+}
+
 .alternative-searchbar {
   width: 80%;
   height: 2rem;
@@ -283,9 +312,70 @@ main .upload-container .showvideo img {
   height: 100%;
 }
 
+main .upload-container #wait-load {
+  background-color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .upload-container #wait-load img {
+  width: 3rem;
+  height: 3rem;
+}
+
+main .upload-container #wait-load p {
+  font-family: ChakraPetch-Bold;
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 22px;
+}
+
+main .upload-container #wait-load p:nth-last-child(1) {
+  font-family: ChakraPetch-Regular;
+  font-size: 12px;
+  color: rgba(17, 0, 56, 0.64);
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 14px;
+}
+
+main .upload-container #wait-load #loading-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 2rem;
+  width: 324px;
+  height: 24px;
+  padding: 0.125rem;
+  background: #b4b4b4;
+  -webkit-box-shadow: inset 2px 2px 0 0 #fffcfc,  inset -2px -2px 0 0 #000000;
+          box-shadow: inset 2px 2px 0 0 #fffcfc,  inset -2px -2px 0 0 #000000;
+}
+
+main .upload-container #wait-load #loading-bar .barSection {
+  width: 3.7%;
+  background: #999999;
+  border: 1px solid #b4b4b4;
+}
+
 main .upload-container .upload-actions {
   height: 10%;
   width: 100%;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -297,15 +387,22 @@ main .upload-container .upload-actions {
           align-items: center;
 }
 
-main .upload-container .upload-actions button {
-  height: 2.25rem;
+main .upload-container .upload-actions .timer-container {
+  opacity: 0;
   width: 4rem;
-}
-
-main .upload-container .upload-actions .active_record {
-  background: #FF6161;
-  border: 1px solid #110038;
-  -webkit-box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
-          box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+  height: 2.25rem;
+  background: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #979797;
+  -webkit-box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -3,9 +3,10 @@ const uploadContainer = document.getElementsByClassName('upload-container')[0];
 const instructionsContainer = document.getElementsByClassName('instructions-container')[0];
 const myGifsContainer = document.getElementById('myGifs');
 const uploadCloseWindow = document.querySelector('.upload-container .upload-info img');
+const stageInfo= document.getElementById('upload-stage-info');
 const captionContainer = document.getElementsByClassName('showVideo')[0];
 const video_place = document.getElementsByTagName('video')[0];
-const uploadActions = document.getElementsByClassName('upload-actions')
+const timerContainer = document.getElementsByClassName('timer-container')[0]
 const time = document.getElementsByClassName('timer');
 let captionButton = document.getElementById('caption');
 

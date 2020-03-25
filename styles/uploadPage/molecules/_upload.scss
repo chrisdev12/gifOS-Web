@@ -10,7 +10,7 @@ main{
         flex-direction: column;
         justify-content: space-between;
         
-         @media screen and (min-width: 600px){
+        @media screen and (min-width: 600px){
             width: 80%;       
             height: 30rem;
         }
@@ -45,27 +45,76 @@ main{
                 height: 100%;
             }
         }
+        
+        #wait-load{
+            background-color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            img{
+                width: 3rem;
+                height: 3rem;
+            }
+               
+            p{
+                font-family: ChakraPetch-Bold;
+                font-size: 16px;
+                color: #110038;
+                letter-spacing: 0;
+                text-align: center;
+                line-height: 22px;
+                
+                &:nth-last-child(1){
+                    font-family: ChakraPetch-Regular;
+                    font-size: 12px;
+                    color: rgba(17,0,56,0.64);
+                    letter-spacing: 0;
+                    text-align: center;
+                    line-height: 14px;
+                }
+            }
+             
+            #loading-bar {
+                display: flex;
+                margin-top: 2rem;
+                width: 324px;
+                height: 24px;
+                padding: 0.125rem;
+                background: #b4b4b4;
+                box-shadow: inset 2px 2px 0 0 #fffcfc, 
+                inset -2px -2px 0 0 #000000;
+                
+                .barSection {
+                    width: 3.7%;
+                    background: #999999;
+                    border: 1px solid #b4b4b4
+                }
+            }
+        }
             
         .upload-actions{
             height: 10%;
             width: 100%;
+            padding-left: 0.6rem;
+            padding-right: 0.6rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            
-            button{
-               height: 2.25rem;
-               width: 4rem;
-            }
-            
-            .active_record{
-                background: #FF6161;
-                border: 1px solid #110038;
-                box-shadow: inset -1px -1px 0 0 #993A3A,
-                inset 1px 1px 0 0 #FFFFFF; 
+              
+            .timer-container{
+                opacity: 0;
+                width: 4rem;
+                height: 2.25rem;
+                background: #FFFFFF;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid #979797;
+                box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
             }
         }
-    } 
-    
+    }    
 }
   

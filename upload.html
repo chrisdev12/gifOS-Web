@@ -51,7 +51,6 @@
                     ¿Quieres comenzar a crear tu guifo ahora?
                 </p>
             </div>
-            <!-- <img src="./images/window img.png" alt="Window incon on the pre-upload/create section"> -->
             <div class="upload-actions">
                 <button>
                     Cancelar
@@ -65,7 +64,7 @@
 
         <div class="upload-container">
             <div class="upload-info">
-                <p>Un Chequeo Antes de Empezar</p>
+                <p id="upload-stage-info">Un Chequeo Antes de Empezar</p>
                 <img src="./images/button3.svg" alt="Button with shape of X">
             </div>
             <div class="showVideo">
@@ -74,14 +73,16 @@
                 </video>
             </div>
             <div class=" upload-actions">
-                <span>
-                    <span class="timer"></span>
-                    <span class="timer"></span>
-                    <span class="timer"></span>
+                <span class="timer-container">
+                    <span class="timer">00</span>
+                    <span class="timer">:</span>
+                    <span class="timer">00</span>
                 </span>
-                <button id="caption">
-                    Capturar
-                </button>
+                <span class="upload-buttons">
+                    <button id="caption" disabled>
+                        Capturar
+                    </button>
+                </span>
             </div>
         </div>
     </main>
