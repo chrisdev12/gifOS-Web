@@ -1,4 +1,4 @@
-const navcontainer = document.querySelector('header');
+const navcontainer = document.getElementsByTagName('header')[0];
 let searchCoincidencesContainer = document.createElement('div');
 
 //Add the style that will define the style of our container
@@ -38,7 +38,6 @@ function addingCoincidence(){
     const coincidence = document.querySelectorAll('.coincidences p');
     coincidence.forEach(element =>
         element.addEventListener('click', function () {
-            console.log(event.target.innerText);
             searchbar.value = event.target.innerText;
         })
     );

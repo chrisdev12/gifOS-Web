@@ -1,7 +1,7 @@
 let timer = {
     recording: null, //Store the interval (required to use the clearinterval),
     start: function () {
-        let currSec = 1
+        let currSec = 0
         let currMin = 0
         this.recording = setInterval(() => {
             time[0].innerText = `0${currMin}`

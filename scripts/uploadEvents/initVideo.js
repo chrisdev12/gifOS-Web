@@ -16,13 +16,13 @@ async function startVideoCaption() {
     let stream = await  navigator.mediaDevices.getUserMedia(constraints)
     video_place.srcObject = stream;
     video_place.play();
-    captionButton.removeAttribute('disabled')
     video = stream;
+    captionButton.removeAttribute('disabled')
 }
 
 function recordingLogic(event) { 
     switch (event.target.innerText) {
-        case ('Capturar'):
+        case 'Capturar':
             initRecorder('Capturar');
             break;
         case 'Listo':

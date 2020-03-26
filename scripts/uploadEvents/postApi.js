@@ -23,7 +23,9 @@ async function postEndpoint(gif) {
             console.log(res.meta.status)
         }
         
-    } catch (error) { 
+    } catch (error) {
+        alert('Error al subir tu GifOs, vuelve a intentarlo por favor')
+        window.location = "upload.html";
         throw new Error(`Error en el post: ${error}`)
     }
 }
@@ -62,6 +64,7 @@ class LoadAnimation{
 
 function renderLoadContainer() {
     // Hide and remove unnecessary elements
+    let uploadBtn = document.getElementById('upload');
     captionContainer.innerHTML = '';
     timerContainer.style.display = 'none';
     uploadBtn.style.display = 'none';

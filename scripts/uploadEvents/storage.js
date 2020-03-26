@@ -1,5 +1,4 @@
 let videoButtons = document.getElementsByClassName('upload-buttons')[0]
-let uploadBtn = document.createElement('button');
 
 function storeGif(blob) {
     try {
@@ -7,8 +6,6 @@ function storeGif(blob) {
         form.append('file', blob, 'file.gif');
         let url = URL.createObjectURL(blob);
         let uploadBtn = showRecordedGif(url);
-        console.log(form[0])
-        console.log(form.get('file'))
         // Post file to the Giphy upload endpoint if is required
         uploadBtn.addEventListener('click', function () {
             postEndpoint(form)
@@ -19,6 +16,7 @@ function storeGif(blob) {
 }
 
 function showRecordedGif(url) {
+    let uploadBtn = document.createElement('button');
     let gif = document.createElement('img');
     gif.classList.add('createdGif');
     gif.src = url;
@@ -32,6 +30,5 @@ function showRecordedGif(url) {
     videoButtons.appendChild(uploadBtn); //Insert a new button on the buttons container
     captionButton.innerText = 'Repetir captura'; 
     
-    let upload = document.getElementById('upload')
-    return upload
+    return document.getElementById('upload')
 }
