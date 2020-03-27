@@ -8,7 +8,6 @@ async function postEndpoint(gif) {
             method: 'POST',
             body: gif
         };
-        const apikey = 'FomuiY9mN225fs0Hy6WPQTYPrumdf6R8';
         const animation = new LoadAnimation('false');
         renderLoadContainer();
         animation.start();

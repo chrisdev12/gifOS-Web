@@ -1,11 +1,11 @@
 //Same files that index html
 @import '../index/utilities/_normalización.scss'; 
 @import '../index/utilities/_variables.scss';
+@import '../index/quarks/_spans.scss';
 //uploadPage styles
 @import './utilities/_gridBody.scss';
 @import './quarks/_logo.scss';
 @import './quarks/_buttons.scss';
-@import './quarks/_inputs.scss';
 @import './molecules/_main.scss';
 @import './molecules/_myGifs.scss';
 @import './molecules/_upload.scss';
