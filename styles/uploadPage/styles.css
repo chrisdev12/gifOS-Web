@@ -31,8 +31,25 @@
 }
 
 body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 90%;
+      grid-template-columns: 90%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: #ffffff;
   color: #110038;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    -ms-grid-columns: 80%;
+        grid-template-columns: 80%;
+  }
 }
 
 body:before {
@@ -116,13 +133,19 @@ body:before {
 
 main {
   width: 100%;
-  margin-top: 5.5rem;
+  margin-top: 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media screen and (min-width: 600px) {
+  main {
+    margin-top: 5.5rem;
+  }
 }
 
 main .instructions-container, main .upload-container {
@@ -175,7 +198,7 @@ main .instructions-container .upload-info, main .upload-container .upload-info {
 }
 
 main .instructions-container {
-  width: 80%;
+  width: 100%;
   height: 29rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -245,19 +268,42 @@ main .instructions-container .upload-actions button {
 }
 
 #mygifs {
-  margin-top: 9.6rem;
+  margin-top: 6rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
-#mygifs .subtitle {
-  width: 80%;
+@media screen and (min-width: 600px) {
+  #mygifs {
+    margin-top: 11.25rem;
+  }
+}
+
+#mygifs img {
+  width: 45%;
+  height: 10rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 600px) {
+  #mygifs img {
+    max-width: 30%;
+    height: 15rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #mygifs img {
+    width: 21%;
+    height: 18rem;
+  }
 }
 
 main .upload-container {

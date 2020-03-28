@@ -8,18 +8,18 @@ async function postEndpoint(gif) {
             method: 'POST',
             body: gif
         };
-        const animation = new LoadAnimation('false');
+        const animation = new LoadAnimation('true');
         renderLoadContainer();
         animation.start();
         let req = await fetch(`https://upload.giphy.com/v1/gifs?api_key=${apikey}`,params)
         let res = await req.json()
         if (res.meta.status === 200) {
-            console.log('respuesta exitosa')
-            animation.status = 'true';
-            let gifId = res.data.id;
-            gifLocalStore(gifId)
+            //Set the Animation.status = false stop the upload bar animation.
+            animation.status = 'false';
+            gifLocalStore(res.data.id)
         } else {
-            console.log(res.meta.status)
+            alert('Error al subir tu GifOs, vuelve a intentarlo por favor')
+            window.location = "upload.html";
         }
         
     } catch (error) {
@@ -29,9 +29,15 @@ async function postEndpoint(gif) {
     }
 }
 
-function gifLocalStore(res) {
-    //here should be implemented a Timer load
-    localStorage.setItem('upload', res);
+function gifLocalStore(newGif) {
+    
+    if (localStorage.getItem('mygifs') === null) {
+        localStorage.setItem('mygifs', newGif);
+    } else {
+        let currentGifs = localStorage.getItem('mygifs')
+        currentGifs += `,${newGif}`
+        localStorage.setItem('mygifs', currentGifs);
+    }
 }
   
 class LoadAnimation{
@@ -43,7 +49,7 @@ class LoadAnimation{
         let loader = document.querySelectorAll('.barSection')
         let i = 0;
         let interval = setInterval(() => {
-            if (i === 27 && this.status === 'true') {   
+            if (i === 27 && this.status === 'false') {   
                 console.log('subida exitosa');
                 renderPreview();
                 clearInterval(interval);
@@ -57,7 +63,7 @@ class LoadAnimation{
                 loader[i].style.background = "#F7C9F3";
                 i += 1;
             }
-        },150);   
+        },300);   
     }
 }
 
@@ -83,7 +89,7 @@ function renderLoadContainer() {
     barContainer.setAttribute('id','loading-bar')
     let barSections = document.createElement('span');
     barSections.classList.add('barSection')
-    //Create 27 spans
+    //Create 27 spans: Each zone that going to be colored in the loadbar
     for (let i = 0; i < 27; i++){
         barContainer.appendChild(barSections.cloneNode(true))
     }

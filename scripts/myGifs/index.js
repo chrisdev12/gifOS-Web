@@ -14,14 +14,13 @@ async function myGifsById(ids) {
 }
 
 
-let gifs = myGifsById(localStorage.getItem('upload'))
+let gifs = myGifsById(localStorage.getItem('mygifs'))
     .then(res => {
         res.forEach(element => {
-            console.log(element.images.original)
             let img = document.createElement('img')
             img.src = element.images.original.url
             myGifsContainer.appendChild(img);
         });
     }).catch(err => {
-        console.error(err)
+        throw new Error(err)
     })

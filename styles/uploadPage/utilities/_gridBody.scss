@@ -1,6 +1,19 @@
 body{
+    display: grid;
+    grid-template-columns: 90%;
+    justify-content: center;
+    align-items: center;
     background: $white-body;
     color: $dark-body;
+    
+    @media screen and (min-width: 600px){       
+        grid-template-columns: 80%;
+    }
+
+    // @media screen and (min-width: 1000px){
+    //     max-width: 25% 
+        
+    // }
 
     &:before{
         content: '¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803';
