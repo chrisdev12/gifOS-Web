@@ -16,7 +16,7 @@ async function postEndpoint(gif) {
         if (res.meta.status === 200) {
             //Set the Animation.status = false stop the upload bar animation.
             animation.status = 'false';
-            gifLocalStore(res.data.id)
+            animation.gifId = res.data.id;
         } else {
             alert('Error al subir tu GifOs, vuelve a intentarlo por favor')
             window.location = "upload.html";
@@ -29,31 +29,26 @@ async function postEndpoint(gif) {
     }
 }
 
-function gifLocalStore(newGif) {
-    
-    if (localStorage.getItem('mygifs') === null) {
-        localStorage.setItem('mygifs', newGif);
-    } else {
-        let currentGifs = localStorage.getItem('mygifs')
-        currentGifs += `,${newGif}`
-        localStorage.setItem('mygifs', currentGifs);
-    }
-}
-  
+/*
+* To reach a "sync" animation, that only end when the bar reach his last "piece" and 
+* the gif be succesfully posted , when the promise be resolved (200), the status will 
+*be changed to false: The necessary condition to finish the setInterval,and the gif id 
+* stored in the class porperty gifid (to pass ir to localStorage and build  the final preview container.
+*/
+
 class LoadAnimation{
-    constructor(status) {
+    constructor(status,gifId) {
         this.status = status;
+        this.gifId = gifId
     }
     start() {
-        console.log('entrando a la clase');
         let loader = document.querySelectorAll('.barSection')
         let i = 0;
         let interval = setInterval(() => {
             if (i === 27 && this.status === 'false') {   
-                console.log('subida exitosa');
-                renderPreview();
-                clearInterval(interval);
-                return true;
+                clearInterval(interval); //Stop Interval
+                gifLocalStore(this.gifId); //Store the newGif in localStorage
+                renderPreviewContainer(this.gifId); //Display the final preview container
             } else if(i === 27) {
                 loader.forEach(zone => {
                     zone.style.background = "#999999"
@@ -63,19 +58,65 @@ class LoadAnimation{
                 loader[i].style.background = "#F7C9F3";
                 i += 1;
             }
-        },300);   
+        },250);   
+    }
+}
+
+function renderPreviewContainer(gif) {
+     
+    myGifsById(gif)
+        .then(res => {
+            captionContainer.innerHTML = '';
+            let img = document.createElement('img')
+            let title = document.createElement('p');
+            let readyBtn = captionButton.cloneNode(true);
+            let copyBtn = captionButton.cloneNode(true);
+            img.src = res[0].images.original.url
+            img.alt = 'Gif uploaded'
+            captionContainer.appendChild(img)
+    
+            captionButton.innerText = 'Descargar Guifo';
+            copyBtn.innerText = 'Copiar Enlace Guifo';
+            readyBtn.innerText = 'Listo';
+            stageInfo.innerText = "Guifo Subido Con Éxito";
+            title.innerText = 'Guifo creado con éxito';
+            
+            captionContainer.removeAttribute('id');
+            uploadContainer.setAttribute('id', 'preview');
+            videoButtons.insertBefore(title, captionButton);
+            videoButtons.insertBefore(copyBtn, captionButton);
+            uploadContainer.appendChild(readyBtn);
+            
+        }).catch(err => {
+            throw new Error(err)
+        })
+}
+
+/*
+* Validate if the localStorage doesnt exist: CreateOne.
+* If laready exist one, concatenate the new id gyd to the another ones.
+*/
+function gifLocalStore(newGif) {
+    if (localStorage.getItem('mygifs') === null) {
+        localStorage.setItem('mygifs', newGif);
+    } else {
+        let currentGifs = localStorage.getItem('mygifs')
+        currentGifs += `,${newGif}`
+        localStorage.setItem('mygifs', currentGifs);
     }
 }
 
 function renderLoadContainer() {
     // Hide and remove unnecessary elements
     let uploadBtn = document.getElementById('upload');
+    uploadBtn.style.display = 'none';
+    stageInfo.innerText = "Subiendo Guifo";
+    captionContainer.setAttribute('id', 'wait-load') //Wait-load had predifines styles
     captionContainer.innerHTML = '';
     timerContainer.style.display = 'none';
-    uploadBtn.style.display = 'none';
     captionButton.innerText = 'Cancelar';
     
-    captionContainer.setAttribute('id', 'wait-load')
+    
     let worldImg = document.createElement('img');
     worldImg.src = '<img src="../../images/globe_img.png'
     worldImg.alt = 'World icon that is showed while the gif is being uploaded'
@@ -98,9 +139,4 @@ function renderLoadContainer() {
     let secText = textLoad.cloneNode(true);
     secText.innerHTML = 'Tiempo restante: <del>38 años</del> algunos minutos'
     captionContainer.appendChild(secText)
-}
-
-
-function renderPreview() {
-    console.log(`gif subido: https://giphy.com/gifs/${localStorage.getItem('upload')}`);
 }

@@ -8,6 +8,10 @@
   scroll-behavior: smooth;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
 body {
   display: -ms-grid;
   display: grid;
@@ -532,7 +536,7 @@ nav input {
   height: 1.5rem;
   width: 100%;
   display: none;
-  color: #ffffff;
+  color: #FFF4FD;
 }
 
 #trends .trend-container:hover .trend-info {
@@ -541,7 +545,7 @@ nav input {
 
 body {
   background: #110038;
-  color: #ffffff;
+  color: #FFF4FD;
 }
 
 body:before {
@@ -556,7 +560,7 @@ body .header-btn {
 }
 
 body .header-btn button, body .header-btn select {
-  color: #ffffff;
+  color: #FFF4FD;
 }
 
 body nav, body .coincidences {
@@ -580,7 +584,7 @@ body nav .nav-btn-input, body .coincidences .nav-btn-input {
   border: 1px solid #110038;
   -webkit-box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
           box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
-  color: #ffffff;
+  color: #FFF4FD;
 }
 
 body .coincidences p {
@@ -604,7 +608,7 @@ body .suggestion-container {
 }
 
 body .suggestion-container p {
-  color: #ffffff;
+  color: #FFF4FD;
 }
 
 body .suggestion-container div {

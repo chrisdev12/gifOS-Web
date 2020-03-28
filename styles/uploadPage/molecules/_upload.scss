@@ -1,8 +1,6 @@
 //-------------Upload container--------------------
 main{
-    
-    .upload-container{
-        
+    .upload-container{   
         width: 80%;   
         height: 34.25rem;
         padding: 0.19rem 0.25rem 0.25rem 0.25rem;
@@ -25,6 +23,9 @@ main{
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
+            img{
+                cursor: pointer;
+            }
         }
         
         .showvideo{
@@ -79,12 +80,16 @@ main{
             #loading-bar {
                 display: flex;
                 margin-top: 2rem;
-                width: 324px;
-                height: 24px;
+                width: 90%;
+                height: 1.5rem;
                 padding: 0.125rem;
                 background: #b4b4b4;
                 box-shadow: inset 2px 2px 0 0 #fffcfc, 
                 inset -2px -2px 0 0 #000000;
+                
+                @media screen and (min-width: 600px){
+                    width: 20.25rem; 
+                }
                 
                 .barSection {
                     width: 3.7%;
@@ -116,6 +121,6 @@ main{
                 box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
             }
         }
-    }    
+    }
 }
   

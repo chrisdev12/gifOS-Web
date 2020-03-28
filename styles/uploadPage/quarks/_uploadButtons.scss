@@ -1,0 +1,41 @@
+//Main section buttons
+
+main{
+    
+    button{     
+        background: #FFF4FD; 
+        border: 1px solid $dark-body;
+        box-shadow: $white-button-shadow;
+        cursor: pointer;
+        height: 2.25rem;
+        width: 6rem;
+        margin-left: 1rem;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #997D97, 
+        inset 1px 1px 0 0 #FFFFFF;
+        
+        @media screen and (min-width: 600px){
+            width: 8rem;       
+        }
+        
+        &:nth-last-child(1){
+            background: #F7C9F3;
+        }
+    }
+    
+    .upload-actions{
+        .upload-buttons{             
+            width: 75%;
+            display: flex;
+            justify-content: flex-end;   
+                            
+            #active_record{
+                background: #FF6161;
+                border: 1px solid #110038;
+                box-shadow: inset -1px -1px 0 0 #993A3A,
+                inset 1px 1px 0 0 #FFFFFF; 
+            }
+        } 
+    }
+}
+

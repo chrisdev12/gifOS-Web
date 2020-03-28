@@ -19,12 +19,12 @@ function initRecorder(status) {
         switch (status) {
             case 'Capturar':
                 beginCaptionStyle();
-                recorder = RecordRTC(video, recordObject);
                 timer.start()
+                recorder = RecordRTC(video, recordObject);
                 recorder.startRecording();
                 setTimeout(() => {
                     captionButton.removeAttribute('disabled')  
-                }, 1500);
+                }, 1000);
                 break;
             case 'Listo':
                 endCaptionStyle();
@@ -55,7 +55,7 @@ function beginCaptionStyle() {
     timerContainer.style.opacity = '1';
     captionButton.innerText = 'Listo';
     captionButton.disabled = true;
-    captionButton.setAttribute('class', 'active_record')
+    captionButton.setAttribute('id', 'active_record')
     stageInfo.innerText = 'Capturando Tu Guifo'
     //Ensure that the timer always set to 00:00 when the caption start
     time[0].innerText = '00'
@@ -64,6 +64,6 @@ function beginCaptionStyle() {
 
 function endCaptionStyle() {
     captionButton.innerText = 'Capturar';
-    captionButton.classList.remove('active_record');
+    captionButton.removeAttribute('id');
     stageInfo.innerText = 'Vista Previa'
 }

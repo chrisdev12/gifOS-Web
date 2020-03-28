@@ -8,7 +8,7 @@ const captionContainer = document.getElementsByClassName('showVideo')[0];
 const video_place = document.getElementsByTagName('video')[0];
 const timerContainer = document.getElementsByClassName('timer-container')[0]
 const time = document.getElementsByClassName('timer');
-let captionButton = document.getElementById('caption');
+let captionButton = document.getElementsByClassName('caption')[0];
 
 
 //Hide instruction/pre-upload-container and display the upload-container (whereas the gifts will be captioned)

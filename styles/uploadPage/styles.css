@@ -8,6 +8,10 @@
   scroll-behavior: smooth;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
 .subtitle {
   width: 100%;
   height: 2rem;
@@ -41,7 +45,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #ffffff;
+  background: #FFF4FD;
   color: #110038;
 }
 
@@ -90,19 +94,31 @@ body:before {
   margin-right: 0.5rem;
 }
 
-.upload-actions button {
+main button {
   background: #FFF4FD;
   border: 1px solid #110038;
   -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
           box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
   cursor: pointer;
+  height: 2.25rem;
+  width: 6rem;
+  margin-left: 1rem;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997D97,  inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #997D97,  inset 1px 1px 0 0 #FFFFFF;
 }
 
-.upload-actions button:nth-last-child(1) {
+@media screen and (min-width: 600px) {
+  main button {
+    width: 8rem;
+  }
+}
+
+main button:nth-last-child(1) {
   background: #F7C9F3;
 }
 
-.upload-actions .upload-buttons {
+main .upload-actions .upload-buttons {
   width: 75%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -112,19 +128,7 @@ body:before {
           justify-content: flex-end;
 }
 
-.upload-actions .upload-buttons button {
-  height: 2.25rem;
-  width: 6rem;
-  margin-left: 1rem;
-}
-
-@media screen and (min-width: 600px) {
-  .upload-actions .upload-buttons button {
-    width: 8rem;
-  }
-}
-
-.upload-actions .upload-buttons .active_record {
+main .upload-actions .upload-buttons #active_record {
   background: #FF6161;
   border: 1px solid #110038;
   -webkit-box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
@@ -182,7 +186,7 @@ main .instructions-container p, main .upload-container p {
 main .instructions-container .upload-info, main .upload-container .upload-info {
   background: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
   background: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
-  color: #ffffff;
+  color: #FFF4FD;
   position: absolute;
   padding-left: 0.5rem;
   height: 1.5rem;
@@ -295,7 +299,6 @@ main .instructions-container .upload-actions button {
   #mygifs img {
     max-width: 30%;
     height: 15rem;
-    margin-bottom: 3rem;
   }
 }
 
@@ -348,6 +351,10 @@ main .upload-container .upload-info {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+main .upload-container .upload-info img {
+  cursor: pointer;
 }
 
 main .upload-container .showvideo {
@@ -416,12 +423,18 @@ main .upload-container #wait-load #loading-bar {
   display: -ms-flexbox;
   display: flex;
   margin-top: 2rem;
-  width: 324px;
-  height: 24px;
+  width: 90%;
+  height: 1.5rem;
   padding: 0.125rem;
   background: #b4b4b4;
   -webkit-box-shadow: inset 2px 2px 0 0 #fffcfc,  inset -2px -2px 0 0 #000000;
           box-shadow: inset 2px 2px 0 0 #fffcfc,  inset -2px -2px 0 0 #000000;
+}
+
+@media screen and (min-width: 600px) {
+  main .upload-container #wait-load #loading-bar {
+    width: 20.25rem;
+  }
 }
 
 main .upload-container #wait-load #loading-bar .barSection {
@@ -463,5 +476,103 @@ main .upload-container .upload-actions .timer-container {
   border: 1px solid #979797;
   -webkit-box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
           box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+}
+
+#preview {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#preview .showvideo {
+  width: 100%;
+  height: 60%;
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#preview button {
+  width: 40%;
+  margin-left: 0rem;
+}
+
+#preview .upload-actions {
+  margin-top: 2rem;
+  width: 60%;
+  height: 30%;
+}
+
+#preview .upload-actions .upload-buttons {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#preview .upload-actions .upload-buttons button {
+  width: 100%;
+}
+
+#preview .upload-actions .upload-buttons p {
+  width: 100%;
+  font-family: ChakraPetch-Bold;
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+@media screen and (min-width: 600px) {
+  #preview {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #preview .showvideo {
+    margin-left: 1.5rem;
+    margin-top: 4rem;
+    width: 50%;
+    height: 60%;
+  }
+  #preview button {
+    margin-left: 0rem;
+  }
+  #preview button:nth-last-child(1) {
+    width: 20%;
+    margin: 2.5rem;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  #preview .upload-actions {
+    margin-top: 4rem;
+    width: 35%;
+    height: 60%;
+  }
+  #preview .upload-actions .upload-buttons {
+    height: 50%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

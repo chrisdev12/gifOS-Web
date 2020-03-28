@@ -8,6 +8,10 @@
   scroll-behavior: smooth;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
 body {
   display: -ms-grid;
   display: grid;
@@ -532,7 +536,7 @@ nav input {
   height: 1.5rem;
   width: 100%;
   display: none;
-  color: #ffffff;
+  color: #FFF4FD;
 }
 
 #trends .trend-container:hover .trend-info {
@@ -540,7 +544,7 @@ nav input {
 }
 
 body {
-  background: #ffffff;
+  background: #FFF4FD;
   color: #110038;
 }
 
@@ -607,7 +611,7 @@ body .suggestion-container {
 }
 
 body .suggestion-container p {
-  color: #ffffff;
+  color: #FFF4FD;
 }
 
 body .suggestion-container div {
