@@ -1,4 +1,4 @@
-let video = null;
+let video;
 
 uploadCloseWindow.addEventListener('click', cancel)
 begin.addEventListener('click', startVideoCaption)
@@ -33,15 +33,28 @@ function recordingLogic(event) {
             rebuildVideo(); 
             stageInfo.innerText = 'Un Chequeo Antes de Empezar'
             break;
+        case 'Subir Guifo':
+             // Post file to the Giphy upload endpoint if is required
+            postEndpoint(form);
+            break;
+        case 'Descargar Guifo':
+            downloadFile();
+            break; 
+        case 'Copiar Enlace Guifo':
+            copyLink()
+            break;
+        default:
+            alert('Error / Será redirigido al');
+            window.location = 'upload.html';
+            break;
     } 
 }
 
 //Alter the dom to show again the video when the user require retake a gifo record
 function rebuildVideo() {
-    let gif = document.getElementsByClassName('createdGif')[0];
     captionContainer.removeChild(gif);
-    let upload = document.getElementById('upload');
-    videoButtons.removeChild(upload);
+    let uploadBtn = document.getElementsByClassName('caption')[1];
+    videoButtons.removeChild(uploadBtn);
     captionButton.innerText = 'Capturar'
     video_place.style.display = 'block'
     startVideoCaption()

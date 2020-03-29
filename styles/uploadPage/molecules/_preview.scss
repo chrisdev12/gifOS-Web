@@ -70,6 +70,11 @@
             .upload-buttons{
                 height: 50%;
                 flex-direction: column;
+                
+                button{
+                    margin: 0rem;
+                    background: #FFF4FD; 
+                }
             }     
         }       
     }

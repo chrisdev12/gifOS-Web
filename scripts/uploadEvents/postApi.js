@@ -48,7 +48,7 @@ class LoadAnimation{
             if (i === 27 && this.status === 'false') {   
                 clearInterval(interval); //Stop Interval
                 gifLocalStore(this.gifId); //Store the newGif in localStorage
-                renderPreviewContainer(this.gifId); //Display the final preview container
+                renderPreviewContainer(this.gifId); //Display the final preview container (preview.js)
             } else if(i === 27) {
                 loader.forEach(zone => {
                     zone.style.background = "#999999"
@@ -60,36 +60,6 @@ class LoadAnimation{
             }
         },250);   
     }
-}
-
-function renderPreviewContainer(gif) {
-     
-    myGifsById(gif)
-        .then(res => {
-            captionContainer.innerHTML = '';
-            let img = document.createElement('img')
-            let title = document.createElement('p');
-            let readyBtn = captionButton.cloneNode(true);
-            let copyBtn = captionButton.cloneNode(true);
-            img.src = res[0].images.original.url
-            img.alt = 'Gif uploaded'
-            captionContainer.appendChild(img)
-    
-            captionButton.innerText = 'Descargar Guifo';
-            copyBtn.innerText = 'Copiar Enlace Guifo';
-            readyBtn.innerText = 'Listo';
-            stageInfo.innerText = "Guifo Subido Con Éxito";
-            title.innerText = 'Guifo creado con éxito';
-            
-            captionContainer.removeAttribute('id');
-            uploadContainer.setAttribute('id', 'preview');
-            videoButtons.insertBefore(title, captionButton);
-            videoButtons.insertBefore(copyBtn, captionButton);
-            uploadContainer.appendChild(readyBtn);
-            
-        }).catch(err => {
-            throw new Error(err)
-        })
 }
 
 /*
@@ -108,7 +78,7 @@ function gifLocalStore(newGif) {
 
 function renderLoadContainer() {
     // Hide and remove unnecessary elements
-    let uploadBtn = document.getElementById('upload');
+    let uploadBtn = document.getElementsByClassName('caption')[1];
     uploadBtn.style.display = 'none';
     stageInfo.innerText = "Subiendo Guifo";
     captionContainer.setAttribute('id', 'wait-load') //Wait-load had predifines styles
@@ -118,7 +88,7 @@ function renderLoadContainer() {
     
     
     let worldImg = document.createElement('img');
-    worldImg.src = '<img src="../../images/globe_img.png'
+    worldImg.src = '../../images/globe_img.png'
     worldImg.alt = 'World icon that is showed while the gif is being uploaded'
     captionContainer.appendChild(worldImg);
     

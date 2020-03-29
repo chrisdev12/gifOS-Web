@@ -1,3 +1,5 @@
+let blob;
+
 const recordObject = {
     type: 'gif',
     frameRate: 1,
@@ -14,12 +16,12 @@ of the recorder. The second possibilities stop the camera recording on the
 browserand only will be used on the 'stop' conditions.
  */
 
-function initRecorder(status) {
+async function initRecorder(status) {
     try {
         switch (status) {
             case 'Capturar':
-                beginCaptionStyle();
                 timer.start()
+                beginCaptionStyle();
                 recorder = RecordRTC(video, recordObject);
                 recorder.startRecording();
                 setTimeout(() => {
@@ -29,13 +31,11 @@ function initRecorder(status) {
             case 'Listo':
                 endCaptionStyle();
                 timer.stop();
-                video.getTracks()[0].stop();
-                //getBlob should be passed as callback, and manipulate the recorded file and store it on storage.js
-                recorder.stopRecording(
-                    function () {        
-                        storeGif(recorder.getBlob());
-                    }
-                );
+                video.getTracks()[0].stop(); //Close the camera
+                recorder.stopRecording();
+                //Recovering the blob
+                blob = await recorder.getBlob()
+                storeGif(blob);
                 break;
             default:
                 alert('Error al iniciar la grabación, intenta de nuevo')

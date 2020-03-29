@@ -1,34 +1,28 @@
 let videoButtons = document.getElementsByClassName('upload-buttons')[0]
+let gif = document.createElement('img');
+
+const form = new FormData();
 
 function storeGif(blob) {
     try {
-        const form = new FormData();
         form.append('file', blob, 'file.gif');
         let url = URL.createObjectURL(blob);
-        let uploadBtn = showRecordedGif(url);
-        // Post file to the Giphy upload endpoint if is required
-        uploadBtn.addEventListener('click', function () {
-            postEndpoint(form)
-        })
+        showRecordedGif(url);
     } catch (error) {
         throw new Error(`Error en storeGif: ${error}`)
     }
 }
 
 function showRecordedGif(url) {
-    let uploadBtn = document.createElement('button');
-    let gif = document.createElement('img');
-    gif.classList.add('createdGif');
-    gif.src = url;
-    
-    video_place.style.display = 'none';
+    let uploadBtn = captionButton.cloneNode(true);
     uploadBtn.innerText = 'Subir Guifo'
-    uploadBtn.setAttribute('id', 'upload')
-    
+    gif.classList.add('createdGif');
+    gif.src = url; 
+    video_place.style.display = 'none';
+
     //-----Insert the new buttons and gif on their respective container-----
     captionContainer.appendChild(gif); 
     videoButtons.appendChild(uploadBtn); //Insert a new button on the buttons container
+    uploadBtn.addEventListener('click',recordingLogic) //RecordingLogic control the flow of the gif record
     captionButton.innerText = 'Repetir captura'; 
-    
-    return document.getElementById('upload')
 }

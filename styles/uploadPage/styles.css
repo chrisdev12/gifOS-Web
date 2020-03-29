@@ -265,12 +265,6 @@ main .instructions-container .upload-actions {
           align-items: center;
 }
 
-main .instructions-container .upload-actions button {
-  width: 9rem;
-  height: 2.25rem;
-  margin-left: 1rem;
-}
-
 #mygifs {
   margin-top: 6rem;
   display: -webkit-box;
@@ -573,6 +567,10 @@ main .upload-container .upload-actions .timer-container {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  #preview .upload-actions .upload-buttons button {
+    margin: 0rem;
+    background: #FFF4FD;
   }
 }
 /*# sourceMappingURL=styles.css.map */
