@@ -44,11 +44,12 @@ function recordingLogic(event) {
             copyLink()
             break;
         default:
-            alert('Error / Será redirigido al');
+            alert('Error / Será redirigido a la pantalla principal');
             window.location = 'upload.html';
             break;
     } 
 }
+
 
 //Alter the dom to show again the video when the user require retake a gifo record
 function rebuildVideo() {

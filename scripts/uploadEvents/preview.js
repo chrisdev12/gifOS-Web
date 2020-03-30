@@ -22,7 +22,8 @@ function renderPreviewContainer(gifId) {
             uploadContainer.setAttribute('id', 'preview');
             videoButtons.insertBefore(title, captionButton);
             uploadContainer.appendChild(readyBtn);
-            readyBtn.addEventListener('click', recordingLogic);
+            readyBtn.addEventListener('click', finish);
+            myGifsContainer.style.display = 'flex'; //Display myGifs container
         }).catch(err => {
             throw new Error(err)
         })
@@ -51,4 +52,11 @@ function downloadFile() {
         captionButton.style.background = '#FFF4FD' 
     }, 3000);
     invokeSaveAsDialog(blob, 'myFunnyGif.gif')
+}
+
+function finish() {
+    let res = prompt('Esperamos disfrutes tu Gif. Escribe OK si desas volver a la pagina principal, de lo contrario permaneceras en está pantalla').toLowerCase();
+    if (res === 'ok') {
+        window.location = 'upload.html';
+    }
 }
