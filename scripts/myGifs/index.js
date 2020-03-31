@@ -6,7 +6,8 @@ async function myGifsById(ids) {
         let gifs = json.data
         gifs.forEach(element => {
             let img = document.createElement('img')
-            img.src = element.images.original.url
+            img.src = element.images.original.url;
+            img.alt = 'MyGifo image // Uploaded on Giphy.com';
             myGifsContainer.appendChild(img);
         });
         return gifs

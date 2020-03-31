@@ -611,12 +611,6 @@ nav input {
           justify-content: space-evenly;
 }
 
-@media screen and (min-width: 600px) {
-  .mygifos .mygifs-container {
-    margin-top: 11.25rem;
-  }
-}
-
 .mygifos .mygifs-container img {
   width: 45%;
   height: 10rem;

@@ -219,8 +219,9 @@ main .instructions-container h2, main .upload-container h2 {
   font-weight: 700;
 }
 
-main .instructions-container p, main .upload-container p {
+main .instructions-container p, main .instructions-container li, main .upload-container p, main .upload-container li {
   font-size: 0.9rem;
+  margin-bottom: 1rem;
 }
 
 main .instructions-container .upload-info, main .upload-container .upload-info {
@@ -306,7 +307,7 @@ main .instructions-container .upload-actions {
           align-items: center;
 }
 
-#mygifs {
+#myGifs {
   margin-top: 6rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -318,27 +319,21 @@ main .instructions-container .upload-actions {
           justify-content: space-evenly;
 }
 
-@media screen and (min-width: 600px) {
-  #mygifs {
-    margin-top: 11.25rem;
-  }
-}
-
-#mygifs img {
+#myGifs img {
   width: 45%;
   height: 10rem;
   margin-bottom: 2rem;
 }
 
 @media screen and (min-width: 600px) {
-  #mygifs img {
+  #myGifs img {
     max-width: 30%;
     height: 15rem;
   }
 }
 
 @media screen and (min-width: 1000px) {
-  #mygifs img {
+  #myGifs img {
     width: 21%;
     height: 18rem;
   }
