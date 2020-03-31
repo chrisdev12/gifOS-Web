@@ -133,6 +133,37 @@ $dark-button-shadow: inset -1px -1px 0 0 #A72CB3
     }
 }
  
+//Select theme option colors
+
+@mixin theme-options-white{
+    background: $white-body;
+    border: 1px solid #CCA6C9;
+    box-shadow: inset -1px -1px 0 0 #E6DCE4,
+    inset 1px 1px 0 0 #FFFFFF;
+}
+
+//Alternative
+@mixin theme-altOptions-white{
+    background: #F0F0F0;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4,
+    inset 1px 1px 0 0 #FFFFFF;
+}
+
+@mixin theme-options-dark{
+    background: #CCCCCC;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, 
+    inset 1px 1px 0 0 #FFFFFF;
+}
+
+//Alternative
+@mixin theme-altOptions-dark{
+    background: #2E32FB;
+    border: 1px solid rgba(51,53,143,0.20);
+    box-shadow: inset -1px -1px 0 0 #E6DCE4,
+    inset 1px 1px 0 0 
+}
 //Hover Behavior
 
  @mixin hover-animation {  

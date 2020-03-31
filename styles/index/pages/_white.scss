@@ -16,6 +16,19 @@ body{
         }
     } 
     
+    #selectTheme{
+        div{
+            @include white-navbar;
+            button{                
+                @include theme-options-white;
+                
+                &:nth-last-child(1){
+                    @include theme-altOptions-white;  
+                }
+            }
+         }
+    }
+    
     nav,.coincidences{
         @include white-navbar;
         

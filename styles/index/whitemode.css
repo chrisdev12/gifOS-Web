@@ -88,24 +88,6 @@ button, select {
   }
 }
 
-.select-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  overflow: hidden;
-}
-
-.select-container select {
-  width: 98%;
-  background: inherit;
-}
-
 .header-btn {
   position: relative;
   width: 5rem;
@@ -276,25 +258,38 @@ header {
   position: relative;
 }
 
-.create-and-themes .navigation-buttons .select-container {
+.create-and-themes .navigation-buttons #selectTheme {
+  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-left: 0.3rem;
+  cursor: pointer;
 }
 
-.create-and-themes .navigation-buttons .select-container p {
+.create-and-themes .navigation-buttons #selectTheme span {
   width: 70%;
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.create-and-themes .navigation-buttons .select-container span {
-  width: 27.5%;
+.create-and-themes .navigation-buttons #selectTheme .dropdown-icon {
+  width: 28%;
   height: 100%;
-  right: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -307,17 +302,60 @@ header {
   border-left: 1px solid black;
 }
 
-.create-and-themes .navigation-buttons .select-container span img {
+.create-and-themes .navigation-buttons #selectTheme .dropdown-icon img {
   margin-right: 0;
   width: 50%;
   height: 50%;
 }
 
 @media screen and (min-width: 500px) {
-  .create-and-themes .navigation-buttons .select-container span img {
+  .create-and-themes .navigation-buttons #selectTheme .dropdown-icon img {
     width: 30%;
     height: 30%;
   }
+}
+
+.create-and-themes .navigation-buttons #selectTheme div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 7.5rem;
+  width: 100%;
+  z-index: 1000;
+}
+
+@media screen and (min-width: 500px) {
+  .create-and-themes .navigation-buttons #selectTheme div {
+    height: 6.6rem;
+  }
+}
+
+.create-and-themes .navigation-buttons #selectTheme div button {
+  padding-left: 0.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: left;
+  width: 85%;
+  height: 35%;
+  cursor: pointer;
+}
+
+.create-and-themes .navigation-buttons #selectTheme .showTheme {
+  display: none;
 }
 
 nav {
@@ -680,6 +718,31 @@ body .header-btn button, body .header-btn select {
 
 body .hover-border:hover:before {
   border: 1px dotted black;
+}
+
+body #selectTheme div {
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px #B4B4B4, inset 2px 2px #FFFFFF;
+          box-shadow: inset -2px -2px #B4B4B4, inset 2px 2px #FFFFFF;
+}
+
+body #selectTheme div:before {
+  background: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
+  background: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+}
+
+body #selectTheme div button {
+  background: #FFF4FD;
+  border: 1px solid #CCA6C9;
+  -webkit-box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+}
+
+body #selectTheme div button:nth-last-child(1) {
+  background: #F0F0F0;
+  border: 1px solid #808080;
+  -webkit-box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
 }
 
 body nav, body .coincidences {

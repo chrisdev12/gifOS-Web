@@ -5,7 +5,10 @@ mygifsBtn.addEventListener('click',showMyGuifos)
 
 
 /**
- * 
+ * To avoid make multiple API request: User only could do one request (if he doesnt reload the page)
+ * This firsttime he could retrieve all his gifs sotred on local store
+ * and the function only going to hide or show that container if user click again 
+ * my Guifos option
  */
 
 function showMyGuifos() {

@@ -13,8 +13,26 @@ body{
         &:before{
             border: 1px dotted white;    
         }
-    }   
-    #myguifos{
+    }
+    
+    a{
+       color: $white-body; 
+    }
+    
+    #selectTheme{
+        div{
+            @include dark-navbar;
+            button{                
+                @include theme-options-dark;
+                
+                &:nth-last-child(1){
+                    @include theme-altOptions-dark;  
+                }
+            }
+        }
+    }
+     
+    #myGuifos{
         color: #FFFFFF;
         letter-spacing: 0;
         line-height: 18px;
