@@ -73,7 +73,6 @@ main{
                 &:nth-last-child(1){
                     font-family: ChakraPetch-Regular;
                     font-size: 12px;
-                    color: rgba(17,0,56,0.64);
                     letter-spacing: 0;
                     text-align: center;
                     line-height: 14px;
@@ -86,9 +85,6 @@ main{
                 width: 90%;
                 height: 1.5rem;
                 padding: 0.125rem;
-                background: #b4b4b4;
-                box-shadow: inset 2px 2px 0 0 #fffcfc, 
-                inset -2px -2px 0 0 #000000;
                 margin-bottom: 1rem;
                 
                 @media screen and (min-width: 600px){
@@ -97,8 +93,6 @@ main{
                 
                 .barSection {
                     width: 3.7%;
-                    background: #999999;
-                    border: 1px solid #b4b4b4
                 }
             }
         }
@@ -122,7 +116,8 @@ main{
                 justify-content: center;
                 align-items: center;
                 border: 1px solid #979797;
-                box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+                box-shadow: inset -2px -2px 0 0 #E6E6E6,
+                 inset 2px 2px 0 0 #000000;
             }
         }
     }

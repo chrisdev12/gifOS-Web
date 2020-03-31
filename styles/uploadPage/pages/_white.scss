@@ -1,0 +1,60 @@
+//Body
+body{
+    background: $white-body;
+    color: $dark-body;
+    
+    &:before{
+        background: $white-topbar-background;  
+    }
+}
+
+//Quarks: buttons
+
+main{
+    button{
+        background: #FFF4FD;
+        border: 1px solid $dark-body;
+        box-shadow: $white-button-shadow; 
+         
+        &:nth-last-child(1){
+            background: #F7C9F3;
+        }
+    }
+    span{
+       border-right: 1px solid black; 
+    }
+}
+
+//Molecules: Main
+
+main{
+    
+    .instructions-container,.upload-container{
+        //Borders and shadow styles
+        @include white-gifts-container 
+    }
+    
+    .upload-info{
+        background: $white-topbar-background;
+        color: $white-body;  
+    }
+    
+    //Molecules: upload
+    
+    .upload-container{
+        #wait-load{
+            background-color: #FFFFFF;
+        }
+        
+        #loading-bar{
+            background: #b4b4b4;
+            box-shadow: inset 2px 2px 0 0 #fffcfc, 
+            inset -2px -2px 0 0 #000000;
+            
+            .barSection {      
+                background: #999999;
+                border: 1px solid #b4b4b4
+            }
+        }
+    }
+}

@@ -53,8 +53,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #FFF4FD;
-  color: #110038;
 }
 
 @media screen and (min-width: 600px) {
@@ -82,8 +80,6 @@ body:before {
   color: #FFFFFF;
   -webkit-box-shadow: 0 1px 0 0 #110038;
           box-shadow: 0 1px 0 0 #110038;
-  background: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
-  background: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
 }
 
 .logo {
@@ -104,27 +100,16 @@ body:before {
 
 main button {
   position: relative;
-  background: #FFF4FD;
-  border: 1px solid #110038;
-  -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
   cursor: pointer;
   height: 2.25rem;
   width: 6rem;
   margin-left: 1rem;
-  border: 1px solid #110038;
-  -webkit-box-shadow: inset -1px -1px 0 0 #997D97,  inset 1px 1px 0 0 #FFFFFF;
-          box-shadow: inset -1px -1px 0 0 #997D97,  inset 1px 1px 0 0 #FFFFFF;
 }
 
 @media screen and (min-width: 600px) {
   main button {
     width: 8rem;
   }
-}
-
-main button:nth-last-child(1) {
-  background: #F7C9F3;
 }
 
 main button span {
@@ -142,7 +127,6 @@ main button span {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-right: 1px solid black;
 }
 
 main button span img {
@@ -203,9 +187,6 @@ main .instructions-container, main .upload-container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #E6E6E6;
-  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
-          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 }
 
 main .instructions-container h1, main .upload-container h1 {
@@ -225,9 +206,6 @@ main .instructions-container p, main .instructions-container li, main .upload-co
 }
 
 main .instructions-container .upload-info, main .upload-container .upload-info {
-  background: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
-  background: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
-  color: #FFF4FD;
   position: absolute;
   padding-left: 0.5rem;
   height: 1.5rem;
@@ -445,7 +423,6 @@ main .upload-container #wait-load p {
 main .upload-container #wait-load p:nth-last-child(1) {
   font-family: ChakraPetch-Regular;
   font-size: 12px;
-  color: rgba(17, 0, 56, 0.64);
   letter-spacing: 0;
   text-align: center;
   line-height: 14px;
@@ -459,9 +436,6 @@ main .upload-container #wait-load #loading-bar {
   width: 90%;
   height: 1.5rem;
   padding: 0.125rem;
-  background: #b4b4b4;
-  -webkit-box-shadow: inset 2px 2px 0 0 #fffcfc,  inset -2px -2px 0 0 #000000;
-          box-shadow: inset 2px 2px 0 0 #fffcfc,  inset -2px -2px 0 0 #000000;
   margin-bottom: 1rem;
 }
 
@@ -473,8 +447,6 @@ main .upload-container #wait-load #loading-bar {
 
 main .upload-container #wait-load #loading-bar .barSection {
   width: 3.7%;
-  background: #999999;
-  border: 1px solid #b4b4b4;
 }
 
 main .upload-container .upload-actions {
@@ -508,8 +480,8 @@ main .upload-container .upload-actions .timer-container {
       -ms-flex-align: center;
           align-items: center;
   border: 1px solid #979797;
-  -webkit-box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
-          box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+  -webkit-box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
 }
 
 #preview {
@@ -614,4 +586,57 @@ main .upload-container .upload-actions .timer-container {
     background: #FFF4FD;
   }
 }
-/*# sourceMappingURL=styles.css.map */
+
+body {
+  background: #110038;
+  color: #FFF4FD;
+}
+
+body:before {
+  background: -webkit-gradient(linear, right top, left top, from(#EE3EFE), to(#2E32FB));
+  background: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+}
+
+main button {
+  background: #110038;
+  border: 1px solid #B4B4B4;
+  -webkit-box-shadow: inset -1px -1px 0 0 #5C5C5C, inset 1px 1px 0 0 #FFF4FD;
+          box-shadow: inset -1px -1px 0 0 #5C5C5C, inset 1px 1px 0 0 #FFF4FD;
+  color: white;
+}
+
+main button:nth-last-child(1) {
+  background: #A72CB3;
+}
+
+main span {
+  border-right: 1px solid white;
+}
+
+main .instructions-container, main .upload-container {
+  background: #B4B4B4;
+  -webkit-box-shadow: inset -2px -2px 0 0 #5C5C5C, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #5C5C5C, inset 2px 2px 0 0 #FFFFFF;
+}
+
+main .upload-info {
+  background: -webkit-gradient(linear, right top, left top, from(#EE3EFE), to(#2E32FB));
+  background: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+  color: #110038;
+}
+
+main .upload-container #wait-load {
+  background-color: #E6E6E6;
+}
+
+main .upload-container #loading-bar {
+  background: #999999;
+  -webkit-box-shadow: inset 2px 2px 0 0 #E6E6E6, inset -2px -2px 0 0 #000000;
+          box-shadow: inset 2px 2px 0 0 #E6E6E6, inset -2px -2px 0 0 #000000;
+}
+
+main .upload-container #loading-bar .barSection {
+  background: #EE3EFE;
+  border: 1px solid #ffff;
+}
+/*# sourceMappingURL=darkmode.css.map */

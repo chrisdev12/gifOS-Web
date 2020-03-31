@@ -1,0 +1,641 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  font-size: 0.9rem;
+  color: #110038;
+}
+
+p {
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.subtitle {
+  width: 100%;
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  font-weight: 100;
+  font-size: 0.9rem;
+  font-family: ChakraPetch-Regular;
+  color: #110038;
+  letter-spacing: 0;
+  background: #FFFAFE;
+  border: 1px solid #E6BBE2;
+  -webkit-box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+          box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 90%;
+      grid-template-columns: 90%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    -ms-grid-columns: 80%;
+        grid-template-columns: 80%;
+  }
+}
+
+body:before {
+  content: '¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803';
+  position: absolute;
+  top: 0.0625rem;
+  right: 0.0625rem;
+  left: 0.0625rem;
+  height: 1.4rem;
+  padding-left: 0.43rem;
+  font-size: 0.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #FFFFFF;
+  -webkit-box-shadow: 0 1px 0 0 #110038;
+          box-shadow: 0 1px 0 0 #110038;
+}
+
+.logo {
+  margin-top: 3.6875rem;
+  margin-left: 3.75rem;
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logo a {
+  margin-right: 0.5rem;
+}
+
+main button {
+  position: relative;
+  cursor: pointer;
+  height: 2.25rem;
+  width: 6rem;
+  margin-left: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  main button {
+    width: 8rem;
+  }
+}
+
+main button span {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main button span img {
+  margin: 0;
+  width: 70%;
+  height: 65%;
+}
+
+main .upload-actions .upload-buttons {
+  width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+main .upload-actions .upload-buttons #active_record {
+  background: #FF6161;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+}
+
+main {
+  width: 100%;
+  margin-top: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (min-width: 600px) {
+  main {
+    margin-top: 5.5rem;
+  }
+}
+
+main .instructions-container, main .upload-container {
+  position: relative;
+  padding: 0.19rem 0.25rem 0.25rem 0.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .instructions-container h1, main .upload-container h1 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+main .instructions-container h2, main .upload-container h2 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+main .instructions-container p, main .instructions-container li, main .upload-container p, main .upload-container li {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+main .instructions-container .upload-info, main .upload-container .upload-info {
+  position: absolute;
+  padding-left: 0.5rem;
+  height: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0.19rem;
+  left: 0.25rem;
+  right: 0.25rem;
+}
+
+main .instructions-container {
+  width: 100%;
+  height: 33rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (min-width: 600px) {
+  main .instructions-container {
+    width: 90%;
+    height: 27.6rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  main .instructions-container {
+    width: 42.75rem;
+    height: 24.6rem;
+  }
+}
+
+main .instructions-container img {
+  position: absolute;
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  main .instructions-container img {
+    display: block;
+    left: 0.8rem;
+    top: 3.5rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  main .instructions-container img {
+    left: 1.5rem;
+    top: 3.5rem;
+  }
+}
+
+main .instructions-container .upload-instructions {
+  margin-top: 1.875rem;
+  width: 80%;
+  max-height: 80%;
+}
+
+main .instructions-container .upload-instructions ol {
+  list-style: none;
+}
+
+main .instructions-container .upload-actions {
+  width: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#myGifs {
+  margin-top: 6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#myGifs img {
+  width: 45%;
+  height: 10rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 600px) {
+  #myGifs img {
+    max-width: 30%;
+    height: 15rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #myGifs img {
+    width: 21%;
+    height: 18rem;
+  }
+}
+
+main .upload-container {
+  width: 80%;
+  height: 34.25rem;
+  padding: 0.19rem 0.25rem 0.25rem 0.25rem;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (min-width: 600px) {
+  main .upload-container {
+    width: 80%;
+    height: 30rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  main .upload-container {
+    width: 53.75rem;
+    height: 34.25rem;
+  }
+}
+
+main .upload-container .upload-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .upload-container .upload-info img {
+  cursor: pointer;
+}
+
+main .upload-container .showvideo {
+  margin-top: 2rem;
+  width: 98%;
+  height: 80%;
+  padding: 0.125rem;
+  -webkit-box-shadow: inset -2px -2px 0 0 #ffffff,  inset 2px 2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #ffffff,  inset 2px 2px 0 0 #000000;
+}
+
+main .upload-container .showvideo video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main .upload-container .showvideo img {
+  width: 100%;
+  height: 100%;
+}
+
+main .upload-container #wait-load {
+  background-color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .upload-container #wait-load img {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+main .upload-container #wait-load p {
+  font-family: ChakraPetch-Bold;
+  font-weight: 700;
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 22px;
+  margin-bottom: 1rem;
+}
+
+main .upload-container #wait-load p:nth-last-child(1) {
+  font-family: ChakraPetch-Regular;
+  font-size: 12px;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 14px;
+}
+
+main .upload-container #wait-load #loading-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 2rem;
+  width: 90%;
+  height: 1.5rem;
+  padding: 0.125rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  main .upload-container #wait-load #loading-bar {
+    width: 20.25rem;
+  }
+}
+
+main .upload-container #wait-load #loading-bar .barSection {
+  width: 3.7%;
+}
+
+main .upload-container .upload-actions {
+  height: 10%;
+  width: 100%;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .upload-container .upload-actions .timer-container {
+  opacity: 0;
+  width: 4rem;
+  height: 2.25rem;
+  background: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #979797;
+  -webkit-box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+}
+
+#preview {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#preview .showvideo {
+  width: 100%;
+  height: 60%;
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#preview button {
+  width: 40%;
+  margin-left: 0rem;
+}
+
+#preview .upload-actions {
+  margin-top: 2rem;
+  width: 60%;
+  height: 30%;
+}
+
+#preview .upload-actions .upload-buttons {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#preview .upload-actions .upload-buttons button {
+  width: 100%;
+}
+
+#preview .upload-actions .upload-buttons p {
+  width: 100%;
+  font-family: ChakraPetch-Bold;
+  font-size: 16px;
+  font-weight: 700;
+  color: #110038;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+@media screen and (min-width: 600px) {
+  #preview {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #preview .showvideo {
+    margin-left: 1.5rem;
+    margin-top: 4rem;
+    width: 50%;
+    height: 60%;
+  }
+  #preview button {
+    margin-left: 0rem;
+  }
+  #preview button:nth-last-child(1) {
+    width: 20%;
+    margin: 2.5rem;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  #preview .upload-actions {
+    margin-top: 4rem;
+    width: 35%;
+    height: 60%;
+  }
+  #preview .upload-actions .upload-buttons {
+    height: 50%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #preview .upload-actions .upload-buttons button {
+    margin: 0rem;
+    background: #FFF4FD;
+  }
+}
+
+body {
+  background: #FFF4FD;
+  color: #110038;
+}
+
+body:before {
+  background: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
+  background: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+}
+
+main button {
+  background: #FFF4FD;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+main button:nth-last-child(1) {
+  background: #F7C9F3;
+}
+
+main span {
+  border-right: 1px solid black;
+}
+
+main .instructions-container, main .upload-container {
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+main .upload-info {
+  background: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
+  background: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+  color: #FFF4FD;
+}
+
+main .upload-container #wait-load {
+  background-color: #FFFFFF;
+}
+
+main .upload-container #loading-bar {
+  background: #b4b4b4;
+  -webkit-box-shadow: inset 2px 2px 0 0 #fffcfc,  inset -2px -2px 0 0 #000000;
+          box-shadow: inset 2px 2px 0 0 #fffcfc,  inset -2px -2px 0 0 #000000;
+}
+
+main .upload-container #loading-bar .barSection {
+  background: #999999;
+  border: 1px solid #b4b4b4;
+}
+/*# sourceMappingURL=whitemode.css.map */
