@@ -11,6 +11,13 @@
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
+  font-size: 0.9rem;
+  color: #110038;
+}
+
+p {
+  font-weight: normal;
+  font-size: 1rem;
 }
 
 .subtitle {
@@ -96,6 +103,7 @@ body:before {
 }
 
 main button {
+  position: relative;
   background: #FFF4FD;
   border: 1px solid #110038;
   -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
@@ -117,6 +125,30 @@ main button {
 
 main button:nth-last-child(1) {
   background: #F7C9F3;
+}
+
+main button span {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-right: 1px solid black;
+}
+
+main button span img {
+  margin: 0;
+  width: 70%;
+  height: 65%;
 }
 
 main .upload-actions .upload-buttons {
@@ -177,7 +209,14 @@ main .instructions-container, main .upload-container {
 }
 
 main .instructions-container h1, main .upload-container h1 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+main .instructions-container h2, main .upload-container h2 {
   font-size: 1rem;
+  font-weight: 700;
 }
 
 main .instructions-container p, main .upload-container p {
@@ -204,7 +243,7 @@ main .instructions-container .upload-info, main .upload-container .upload-info {
 
 main .instructions-container {
   width: 100%;
-  height: 29rem;
+  height: 33rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -212,14 +251,15 @@ main .instructions-container {
 
 @media screen and (min-width: 600px) {
   main .instructions-container {
-    width: 80%;
-    height: 24.6rem;
+    width: 90%;
+    height: 27.6rem;
   }
 }
 
 @media screen and (min-width: 1000px) {
   main .instructions-container {
     width: 42.75rem;
+    height: 24.6rem;
   }
 }
 
@@ -393,15 +433,18 @@ main .upload-container #wait-load {
 main .upload-container #wait-load img {
   width: 3rem;
   height: 3rem;
+  margin-bottom: 0.5rem;
 }
 
 main .upload-container #wait-load p {
   font-family: ChakraPetch-Bold;
+  font-weight: 700;
   font-size: 16px;
   color: #110038;
   letter-spacing: 0;
   text-align: center;
   line-height: 22px;
+  margin-bottom: 1rem;
 }
 
 main .upload-container #wait-load p:nth-last-child(1) {
@@ -424,6 +467,7 @@ main .upload-container #wait-load #loading-bar {
   background: #b4b4b4;
   -webkit-box-shadow: inset 2px 2px 0 0 #fffcfc,  inset -2px -2px 0 0 #000000;
           box-shadow: inset 2px 2px 0 0 #fffcfc,  inset -2px -2px 0 0 #000000;
+  margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 600px) {
@@ -530,6 +574,7 @@ main .upload-container .upload-actions .timer-container {
   width: 100%;
   font-family: ChakraPetch-Bold;
   font-size: 16px;
+  font-weight: 700;
   color: #110038;
   letter-spacing: 0;
   line-height: 22px;

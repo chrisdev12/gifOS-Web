@@ -2,7 +2,7 @@ let blob;
 
 const recordObject = {
     type: 'gif',
-    frameRate: 1,
+    frameRate: 100,
     quality: 10,
     startRecording: function () { },
     stopRecording: function (blobURL) {
@@ -53,7 +53,12 @@ async function initRecorder(status) {
 
 function beginCaptionStyle() {
     timerContainer.style.opacity = '1';
-    captionButton.innerText = 'Listo';
+    captionButton.innerHTML =
+        `Listo
+    <span>
+        <img class="upload-img-btn" 
+        src="./images/recording.svg" alt="camera icon">
+    </span>`;
     captionButton.disabled = true;
     captionButton.setAttribute('id', 'active_record')
     stageInfo.innerText = 'Capturando Tu Guifo'

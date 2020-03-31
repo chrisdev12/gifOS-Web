@@ -10,6 +10,12 @@ body{
         @include header-white-buttons;
     }
     
+    .hover-border:hover{
+        &:before{
+            border: 1px dotted black;    
+        }
+    } 
+    
     nav,.coincidences{
         @include white-navbar;
         

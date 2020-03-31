@@ -10,8 +10,6 @@ function renderPreviewContainer(gifId) {
             gif.src = res[0].images.original.url
             gif.alt = 'Gif uploaded'
             captionContainer.appendChild(gif)
-            
-            copyBtn.value = gif.value = res[0].images.original.url
             copyBtn.innerText = 'Copiar Enlace Guifo';
             captionButton.innerText = 'Descargar Guifo';
             readyBtn.innerText = 'Listo';

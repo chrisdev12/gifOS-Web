@@ -137,7 +137,6 @@ $dark-button-shadow: inset -1px -1px 0 0 #A72CB3
 
  @mixin hover-animation {  
     background: none;
-    border: 1px dotted black;
     content: "";
     display: block;
     position: absolute;

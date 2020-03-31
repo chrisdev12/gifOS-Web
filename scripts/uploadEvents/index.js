@@ -1,3 +1,4 @@
+const apikey = 'FomuiY9mN225fs0Hy6WPQTYPrumdf6R8';
 const begin = document.getElementById('begin');
 const uploadContainer = document.getElementsByClassName('upload-container')[0];
 const instructionsContainer = document.getElementsByClassName('instructions-container')[0];
@@ -25,3 +26,5 @@ function showInstruction() {
     myGifsContainer.style.display = 'flex';
     uploadContainer.style.display = 'none';
 }
+
+myGifsById(localStorage.getItem('mygifs'))

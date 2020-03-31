@@ -3,6 +3,7 @@
 main{
     
     button{     
+        position: relative;
         background: #FFF4FD; 
         border: 1px solid $dark-body;
         box-shadow: $white-button-shadow;
@@ -21,6 +22,24 @@ main{
         &:nth-last-child(1){
             background: #F7C9F3;
         }
+        
+        span{
+            position: absolute;
+            width: 20%;
+            height: 100%;
+            left:  0;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid black;
+            img{
+                margin: 0;
+                width: 70%;
+                height: 65%;
+            }
+        }
+            
     }
     
     .upload-actions{

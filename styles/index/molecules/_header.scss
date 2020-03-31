@@ -44,6 +44,30 @@ header{
         justify-content: flex-end;
         flex-wrap: wrap;
         align-content: space-around;
+        
+        .select-container{
+            position: relative;
+            span{
+                position: absolute;
+                width: 20%;
+                height: 100%;
+                right: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-left: 1px solid black;
+                img{
+                    margin-right: 0;
+                    width: 70%;
+                    height: 65%;
+                }
+            }
+        }
+        
+        button{
+            position: relative;
+        }
+        
     }        
 }
 

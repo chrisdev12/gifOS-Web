@@ -56,7 +56,12 @@ function rebuildVideo() {
     captionContainer.removeChild(gif);
     let uploadBtn = document.getElementsByClassName('caption')[1];
     videoButtons.removeChild(uploadBtn);
-    captionButton.innerText = 'Capturar'
+    captionButton.innerHTML =
+        `Capturar
+    <span>
+        <img class="upload-img-btn" 
+        src="./images/camera.svg" alt="camera icon">
+    </span>`;
     video_place.style.display = 'block'
     startVideoCaption()
 }

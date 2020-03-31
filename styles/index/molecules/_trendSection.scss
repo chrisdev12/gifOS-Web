@@ -57,5 +57,21 @@
             }
         }
     }
+    
+    .hover-border:hover{
+        &:before{
+            top: 0.17rem;
+            left: 0.17rem;
+            right: 0.17rem;
+            bottom: 0.17rem;
+            border-width: 2px;           
+        }
+    }  
+}
+
+.mygifos{
+    #trends{
+        display: none;
+    }
 }
     

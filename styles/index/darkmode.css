@@ -11,6 +11,13 @@
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
+  font-size: 0.9rem;
+  color: #110038;
+}
+
+p {
+  font-weight: normal;
+  font-size: 1rem;
 }
 
 body {
@@ -152,7 +159,6 @@ button, select {
 
 .hover-border:hover:before {
   background: none;
-  border: 1px dotted black;
   content: "";
   display: block;
   position: absolute;
@@ -256,6 +262,37 @@ header {
       align-content: space-around;
 }
 
+.create-and-themes div .select-container {
+  position: relative;
+}
+
+.create-and-themes div .select-container span {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-left: 1px solid black;
+}
+
+.create-and-themes div .select-container span img {
+  margin-right: 0;
+  width: 70%;
+  height: 65%;
+}
+
+.create-and-themes div button {
+  position: relative;
+}
+
 nav {
   padding-left: 1rem;
   padding-right: 1.2rem;
@@ -356,7 +393,6 @@ nav input {
 
 .coincidences p:nth-child(1):before {
   background: none;
-  border: 1px dotted black;
   content: "";
   display: block;
   position: absolute;
@@ -471,6 +507,10 @@ nav input {
   border-width: 2px;
 }
 
+.mygifos #suggestions {
+  display: none;
+}
+
 #trends {
   height: 71.1rem;
   width: 100%;
@@ -544,6 +584,59 @@ nav input {
   display: block;
 }
 
+#trends .hover-border:hover:before {
+  top: 0.17rem;
+  left: 0.17rem;
+  right: 0.17rem;
+  bottom: 0.17rem;
+  border-width: 2px;
+}
+
+.mygifos #trends {
+  display: none;
+}
+
+.mygifs-container {
+  display: none;
+}
+
+.mygifos .mygifs-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+@media screen and (min-width: 600px) {
+  .mygifos .mygifs-container {
+    margin-top: 11.25rem;
+  }
+}
+
+.mygifos .mygifs-container img {
+  width: 45%;
+  height: 10rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 600px) {
+  .mygifos .mygifs-container img {
+    max-width: 30%;
+    height: 15rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .mygifos .mygifs-container img {
+    width: 21%;
+    height: 18rem;
+  }
+}
+
 body {
   background: #110038;
   color: #FFF4FD;
@@ -562,6 +655,16 @@ body .header-btn {
 
 body .header-btn button, body .header-btn select {
   color: #FFF4FD;
+}
+
+body .hover-border:hover:before {
+  border: 1px dotted white;
+}
+
+body #myguifos {
+  color: #FFFFFF;
+  letter-spacing: 0;
+  line-height: 18px;
 }
 
 body nav, body .coincidences {

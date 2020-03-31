@@ -6,8 +6,18 @@ body{
        background: $dark-topbar-background; 
     }
     .header-btn{
-        @include header-dark-buttons
-        
+        @include header-dark-buttons   
+    }
+    
+    .hover-border:hover{
+        &:before{
+            border: 1px dotted white;    
+        }
+    }   
+    #myguifos{
+        color: #FFFFFF;
+        letter-spacing: 0;
+        line-height: 18px;
     }
     
     nav,.coincidences{

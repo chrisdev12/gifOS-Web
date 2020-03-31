@@ -20,7 +20,13 @@ main{
         @include white-gifts-container;//Borders and shadow styles
         
         h1{
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+        h2{
             font-size: 1rem;
+            font-weight: 700;
         }
         p{
             font-size: 0.9rem;
@@ -43,16 +49,17 @@ main{
     //------------Instructions-container--------------
     .instructions-container{
         width: 100%; 
-        height: 29rem;
+        height: 33rem;
         align-items: center;
         
         @media screen and (min-width: 600px){
-            width: 80%;
-            height: 24.6rem;       
+            width: 90%;
+            height: 27.6rem;       
         }
         
         @media screen and (min-width: 1000px){
-            width: 42.75rem;         
+            width: 42.75rem;  
+            height: 24.6rem;          
         }
         
         img{ //Image only should appears in med and big screens
