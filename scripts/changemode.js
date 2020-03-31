@@ -1,21 +1,20 @@
-const themechanger = document.querySelector('#selectTheme');
-const logo = document.querySelector('header img');
-const lupa = document.querySelector('.nav-btn img');
-let styleFile = document.querySelector('head link');
-let activeTheme = 'white'; //To be able to know the current theme 
-//in case of need this to implment some event;
+const themechanger = document.getElementById('selectTheme');
+//imgTheme: Logo and lupe images
+const imgTheme = document.getElementsByClassName('img-theme');
+const stylelink = document.getElementsByTagName('link')[0];
+let activeTheme = 'white'; // know the current theme 
     
 themechanger.addEventListener('change', function () {
     
     switch (event.target.value) {
-        case 'white': styleFile.setAttribute('href', './styles/index/whitemode.css')
-            logo.setAttribute('src', './images/gifOF_logo.png');
-            lupa.setAttribute('src', './images/lupa_inactive.svg');
+        case 'white': stylelink.setAttribute('href', './styles/index/whitemode.css')
+            imgTheme[0].setAttribute('src', './images/gifOF_logo.png');
+            imgTheme[1].setAttribute('src', './images/lupa_inactive.svg');
             activeTheme = 'white';
             break;
-        case 'dark': styleFile.setAttribute('href', './styles/index/darkmode.css')
-            logo.setAttribute('src', './images/gifOF_logo_dark.png');
-            lupa.setAttribute('src', './images/CombinedShape.svg');
+        case 'dark': stylelink.setAttribute('href', './styles/index/darkmode.css')
+            imgTheme[0].setAttribute('src', './images/gifOF_logo_dark.png');
+            imgTheme[1].setAttribute('src', './images/CombinedShape.svg');
             activeTheme = 'dark';
             break;    
     }
