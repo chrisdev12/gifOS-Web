@@ -37,7 +37,7 @@ header{
     }
     
     //Buttons container
-    div{       
+    .navigation-buttons{       
         width: 80%;
         height: 100%;
         display: flex;
@@ -45,29 +45,43 @@ header{
         flex-wrap: wrap;
         align-content: space-around;
         
-        .select-container{
-            position: relative;
-            span{
-                position: absolute;
-                width: 20%;
-                height: 100%;
-                right: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-left: 1px solid black;
-                img{
-                    margin-right: 0;
-                    width: 70%;
-                    height: 65%;
-                }
-            }
+        p,a{
+            font-size: 1rem;
         }
         
         button{
             position: relative;
         }
         
+        .select-container{
+            display: flex;
+            justify-content: space-between;
+            padding-left: 0.3rem;
+            p{
+                width: 70%;
+                text-align: center;
+            }
+
+            span{
+                width: 27.5%;
+                height: 100%;
+                right: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-left: 1px solid black;
+
+                img{
+                    margin-right: 0;
+                    width: 50%;
+                    height: 50%;
+                    @media screen and (min-width: 500px){
+                        width: 30%;
+                        height: 30%;
+                    }
+                }
+            }
+        }
     }        
 }
 

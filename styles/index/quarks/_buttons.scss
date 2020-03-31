@@ -35,7 +35,7 @@ button , select{
 .header-btn{
     position: relative;
     width: 5rem;
-    height: 1.4rem;
+    height: 2.4rem;
     margin-left: 1rem;
     border: 1px solid #110038;
     
@@ -47,6 +47,10 @@ button , select{
         border: none;
         box-shadow: none;
         justify-content: flex-start;
+    }
+    
+    @media screen and (min-width: 345px){
+       width: 6rem;
     }
     
     @media screen and (min-width: 500px){

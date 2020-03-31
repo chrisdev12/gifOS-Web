@@ -109,7 +109,7 @@ button, select {
 .header-btn {
   position: relative;
   width: 5rem;
-  height: 1.4rem;
+  height: 2.4rem;
   margin-left: 1rem;
   border: 1px solid #110038;
 }
@@ -125,6 +125,12 @@ button, select {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+}
+
+@media screen and (min-width: 345px) {
+  .header-btn {
+    width: 6rem;
+  }
 }
 
 @media screen and (min-width: 500px) {
@@ -247,7 +253,7 @@ header {
   }
 }
 
-.create-and-themes div {
+.create-and-themes .navigation-buttons {
   width: 80%;
   height: 100%;
   display: -webkit-box;
@@ -262,13 +268,31 @@ header {
       align-content: space-around;
 }
 
-.create-and-themes div .select-container {
+.create-and-themes .navigation-buttons p, .create-and-themes .navigation-buttons a {
+  font-size: 1rem;
+}
+
+.create-and-themes .navigation-buttons button {
   position: relative;
 }
 
-.create-and-themes div .select-container span {
-  position: absolute;
-  width: 20%;
+.create-and-themes .navigation-buttons .select-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-left: 0.3rem;
+}
+
+.create-and-themes .navigation-buttons .select-container p {
+  width: 70%;
+  text-align: center;
+}
+
+.create-and-themes .navigation-buttons .select-container span {
+  width: 27.5%;
   height: 100%;
   right: 0;
   display: -webkit-box;
@@ -283,14 +307,17 @@ header {
   border-left: 1px solid black;
 }
 
-.create-and-themes div .select-container span img {
+.create-and-themes .navigation-buttons .select-container span img {
   margin-right: 0;
-  width: 70%;
-  height: 65%;
+  width: 50%;
+  height: 50%;
 }
 
-.create-and-themes div button {
-  position: relative;
+@media screen and (min-width: 500px) {
+  .create-and-themes .navigation-buttons .select-container span img {
+    width: 30%;
+    height: 30%;
+  }
 }
 
 nav {
