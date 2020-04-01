@@ -56,12 +56,23 @@ function rebuildVideo() {
     captionContainer.removeChild(gif);
     let uploadBtn = document.getElementsByClassName('caption')[1];
     videoButtons.removeChild(uploadBtn);
-    captionButton.innerHTML =
-        `Capturar
-    <span>
-        <img class="upload-img-btn" 
-        src="./images/camera.svg" alt="camera icon">
-    </span>`;
+    
+    switch (localStorage.getItem('Gifos-theme')) {
+    
+        case 'dark':
+            captionButton.innerHTML =
+            `<span>
+                <img class="upload-img-btn" src="./images/camera_light.svg" alt="camera icon">
+            </span>Capturar`;
+            break;     
+        default:
+            captionButton.innerHTML =
+            `<span>
+                <img class="upload-img-btn" src="./images/camera.svg" alt="camera icon">
+            </span>Capturar`;
+            break;
+    }
+    
     video_place.style.display = 'block'
     startVideoCaption()
 }

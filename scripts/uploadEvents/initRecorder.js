@@ -54,11 +54,9 @@ async function initRecorder(status) {
 function beginCaptionStyle() {
     timerContainer.style.opacity = '1';
     captionButton.innerHTML =
-        `Listo
-    <span>
-        <img class="upload-img-btn" 
-        src="./images/recording.svg" alt="camera icon">
-    </span>`;
+    `<span>
+        <img class="upload-img-btn" src="./images/recording.svg" alt="recording icon">
+    </span>Listo`;
     captionButton.disabled = true;
     captionButton.setAttribute('id', 'active_record')
     stageInfo.innerText = 'Capturando Tu Guifo'

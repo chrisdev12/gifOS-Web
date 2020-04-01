@@ -11,31 +11,36 @@ main{
         
         @media screen and (min-width: 600px){
             width: 8rem;       
-        }
-        
-        span{
-            position: absolute;
-            width: 20%;
-            height: 100%;
-            left:  0;
-            top: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            img{
-                margin: 0;
-                width: 70%;
-                height: 65%;
-            }
-        }
-            
+        }   
     }
     
     .upload-actions{
         .upload-buttons{             
             width: 75%;
             display: flex;
-            justify-content: flex-end;   
+            justify-content: flex-end;
+            
+            button{
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                
+                span{
+                width: 30%;
+                height: 100%;
+                left:  0;
+                top: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    margin: 0;
+                    width: 62%;
+                    height: 62%;
+                }
+            }  
+            }
+             
                             
             #active_record{
                 background: #FF6161;

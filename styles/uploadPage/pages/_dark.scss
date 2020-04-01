@@ -14,12 +14,12 @@ main{
     button{
         background: #110038;
         border: 1px solid $dark-background;
-        box-shadow:  inset -1px -1px 0 0 #5C5C5C,
-        inset 1px 1px 0 0 #FFF4FD;
+        box-shadow: inset -1px -1px 0 0 #A72CB3,
+        inset 1px 1px 0 0 #FFFFFF;
         color: white;
         
         &:nth-last-child(1){
-            background: #A72CB3;
+            background: #EE3EFE;
         }
     }
     span{
@@ -38,7 +38,6 @@ main{
     
     .upload-info{
         background: $dark-topbar-background;
-        color: $dark-body;  
     }
     
     //Molecules: upload
@@ -56,6 +55,16 @@ main{
             .barSection {      
                 background: #EE3EFE;;
                 border: 1px solid #ffff;
+            }
+        }
+        
+         .upload-actions{
+           
+              
+            .timer-container{
+                .timer{
+                    color: #110038;
+                }
             }
         }
     }

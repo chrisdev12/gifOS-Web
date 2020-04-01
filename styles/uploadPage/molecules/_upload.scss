@@ -23,12 +23,16 @@ main{
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
+            color: #FFF4FD;
+            p{
+                margin: 0;
+            }
             img{
                 cursor: pointer;
             }
         }
         
-        .showvideo{
+        .showVideo{
             margin-top: 2rem;
             width: 98%;
             height: 80%;
@@ -118,6 +122,10 @@ main{
                 border: 1px solid #979797;
                 box-shadow: inset -2px -2px 0 0 #E6E6E6,
                  inset 2px 2px 0 0 #000000;
+                 
+                span{
+                    border: none;
+                }
             }
         }
     }

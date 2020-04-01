@@ -45,9 +45,15 @@ function readyAndRewrite() {
 }
 
 function downloadFile() { 
+    let color = '#FFF4FD';
+    
+    if (localStorage.getItem('Gifos-theme') === 'dark') {
+        color = '#EE3EFE'
+    }
+    
     captionButton.style.background = '#4180F6'
     setTimeout(() => {
-        captionButton.style.background = '#FFF4FD' 
+        captionButton.style.background = color 
     }, 3000);
     invokeSaveAsDialog(blob, 'myFunnyGif.gif')
 }
